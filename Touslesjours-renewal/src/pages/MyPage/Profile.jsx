@@ -1,0 +1,1 @@
+import ProfileEditor from '../../components/MyPage/ProfileEditor';import {PageHeading} from '../../components/common/UI';import './MyPage.css';export default function Profile(){return <div className="mypage container"><PageHeading eyebrow="MY PROFILE" title="내 정보 수정"/><ProfileEditor/></div>;}

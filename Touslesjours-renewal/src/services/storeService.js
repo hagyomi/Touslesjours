@@ -1,0 +1,1 @@
+const stores=[{id:1,name:'뚜레쥬르 시청점',area:'서울',address:'서울 중구 세종대로 인근',hours:'07:00 – 22:00'},{id:2,name:'뚜레쥬르 강남점',area:'서울',address:'서울 강남구 강남대로 인근',hours:'07:00 – 23:00'},{id:3,name:'뚜레쥬르 분당점',area:'경기',address:'경기 성남시 분당구',hours:'08:00 – 22:00'}];export const getStores=()=>Promise.resolve(stores);

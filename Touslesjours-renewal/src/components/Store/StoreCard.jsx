@@ -1,0 +1,2 @@
+import {MapPin,Clock,ArrowUpRight} from 'lucide-react';import './StoreCard.css';
+export default function StoreCard({store}){return <article className="store-card"><span className="store-card__area">{store.area}</span><h2>{store.name}</h2><p><MapPin size={16}/>{store.address}</p><p><Clock size={16}/>{store.hours}</p><a href={'https://map.kakao.com/link/search/'+encodeURIComponent(store.name)} target="_blank" rel="noreferrer">지도에서 검색 <ArrowUpRight size={18}/></a></article>;}

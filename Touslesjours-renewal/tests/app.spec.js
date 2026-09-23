@@ -1,0 +1,52 @@
+import {test,expect} from '@playwright/test';
+import AxeBuilder from '@axe-core/playwright';
+async function login(page){await page.goto('/login');await page.getByRole('button',{name:'테스트 계정으로 로그인',exact:true}).click();await expect(page).toHaveURL(/mypage/);}
+test('home, local assets, responsive navigation and accessibility',async({page})=>{
+ const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('/');await expect(page.getByRole('heading',{level:1})).toContainText('Good Days');await page.evaluate(()=>document.fonts.ready);await page.screenshot({path:'test-results/home-desktop.png',fullPage:true});
+ const broken=await page.locator('img').evaluateAll(imgs=>imgs.filter(i=>i.complete&&i.naturalWidth===0).map(i=>i.src));expect(broken).toEqual([]);
+ const result=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa']).analyze();expect(result.violations).toEqual([]);
+ for(const width of [375,390,767,768,1023,1024,1440,1920]){await page.setViewportSize({width,height:900});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy();}
+ await page.setViewportSize({width:390,height:844});await page.getByRole('button',{name:'메뉴 열기'}).click();await expect(page.getByRole('navigation',{name:'주 메뉴'})).toBeVisible();await page.getByRole('navigation',{name:'주 메뉴'}).getByRole('link',{name:'Menu',exact:true}).click();await expect(page).toHaveURL(/menu/);await page.goto('/');await page.screenshot({path:'test-results/home-mobile.png',fullPage:true});expect(errors).toEqual([]);
+});
+test('catalog search, product detail, cart and persistence',async({page})=>{
+ await page.goto('/search');await page.getByLabel('메뉴 검색').fill('포카치아');await page.getByRole('button',{name:'검색',exact:true}).click();await expect(page.locator('.product-card')).toHaveCount(2);
+ await page.locator('.product-card__visual a').first().click();await page.getByRole('button',{name:'장바구니 담기'}).click();await page.goto('/cart');await expect(page.locator('.cart-item')).toHaveCount(1);await page.reload();await expect(page.locator('.cart-item')).toHaveCount(1);
+ await page.getByRole('spinbutton').fill('3');await expect(page.getByRole('spinbutton')).toHaveValue('3');await page.getByRole('button',{name:/삭제/}).click();await expect(page.getByText('장바구니가 비어 있습니다.')).toBeVisible();
+});
+test('signup validation, duplicate ID and login without persisted password',async({page})=>{
+ await page.goto('/signup');await page.getByRole('button',{name:'가입',exact:true}).click();await expect(page.getByText('아이디를 입력해 주세요.',{exact:true})).toBeVisible();
+ await page.getByLabel('아이디',{exact:true}).fill('new-baker');await page.getByLabel('비밀번호',{exact:true}).fill('temporary-demo-pass');await page.getByLabel('이름',{exact:true}).fill('새로운 베이커');await page.getByRole('button',{name:'가입',exact:true}).click();await expect(page).toHaveURL(/login/);
+ await page.getByLabel('아이디',{exact:true}).fill('new-baker');await page.getByLabel('비밀번호',{exact:true}).fill('temporary-demo-pass');await page.getByRole('button',{name:'로그인',exact:true}).click();await expect(page.getByText('새로운 베이커님, 반가워요.')).toBeVisible();
+ expect(await page.evaluate(()=>JSON.stringify(localStorage))).not.toContain('temporary-demo-pass');await page.reload();await expect(page.getByText('새로운 베이커님, 반가워요.')).toBeVisible();
+});
+test('protected route returns after login; kakao gracefully unavailable',async({page})=>{
+ await page.goto('/inquiries/write');await expect(page).toHaveURL(/login/);await page.getByRole('button',{name:'카카오로 시작하기'}).click();await expect(page.getByRole('alert')).toContainText('테스트 로그인');await page.getByRole('button',{name:'테스트 계정으로 로그인',exact:true}).click();await expect(page).toHaveURL(/inquiries\/write/);
+});
+test('wishlist and recent products are scoped and capped at ten',async({page})=>{
+ await login(page);await page.goto('/products/1');await page.getByRole('button',{name:'상품 좋아요',exact:true}).click();await page.goto('/mypage');await expect(page.locator('#liked .product-card')).toHaveCount(1);await expect(page.locator('#recent .product-card')).toHaveCount(1);
+ await page.evaluate(async()=>{const {useRecentlyViewedStore}=await import('/src/store/useRecentlyViewedStore.js');for(let i=1;i<13;i++)useRecentlyViewedStore.getState().add(String(i));useRecentlyViewedStore.getState().add('8');});await page.reload();await expect(page.locator('#recent .product-card')).toHaveCount(10);expect(await page.locator('#recent .product-card__visual a').first().getAttribute('href')).toBe('/products/8');
+ await page.locator('#liked').getByRole('button',{name:/좋아요/}).click();await expect(page.locator('#liked .product-card')).toHaveCount(0);await page.locator('#recent').getByRole('button',{name:'전체 삭제'}).click();await expect(page.locator('#recent .product-card')).toHaveCount(0);
+});
+test('profile avatar, upload validation, photo resize, cancel and persistence',async({page})=>{
+ await login(page);await page.getByRole('link',{name:'프로필 수정'}).click();await page.getByRole('button',{name:'토끼',exact:false}).click();await page.getByLabel('이름',{exact:true}).fill('빵을 좋아하는 사람');await page.getByRole('button',{name:'변경사항 저장'}).click();await expect(page.getByText('빵을 좋아하는 사람님, 반가워요.')).toBeVisible();await page.reload();await expect(page.locator('.mypage__profile img')).toHaveAttribute('src',/character-02/);
+ await page.goto('/mypage/profile');await page.locator('input[type=file]').setInputFiles({name:'bad.txt',mimeType:'text/plain',buffer:Buffer.from('bad')});await expect(page.getByRole('alert')).toContainText('JPEG');
+ await page.locator('input[type=file]').setInputFiles('public/images/products/product-1.jpg');await expect(page.locator('.profile-editor__preview img')).toHaveAttribute('src',/^data:image\/webp/);await page.getByRole('button',{name:'변경사항 저장'}).click();await page.reload();await expect(page.locator('.mypage__profile img')).toHaveAttribute('src',/^data:image\/webp/);
+ await page.goto('/mypage/profile');await page.getByLabel('이름',{exact:true}).fill('취소할 이름');await page.getByRole('button',{name:'취소',exact:true}).click();await expect(page.getByRole('dialog')).toBeVisible();await page.getByRole('button',{name:'확인',exact:true}).click();await expect(page.getByText('빵을 좋아하는 사람님, 반가워요.')).toBeVisible();
+});
+test('board create edit like delete, search and pagination',async({page})=>{
+ await login(page);await page.goto('/board');await expect(page.locator('.entry-list__card')).toHaveCount(6);await page.getByRole('button',{name:'2페이지'}).click();await expect(page.locator('.entry-list__card')).toHaveCount(6);
+ await page.getByRole('link',{name:'글 작성',exact:true}).click();await page.getByLabel('카테고리',{exact:true}).selectOption('REVIEW');await page.getByLabel('제목',{exact:true}).fill('테스트 빵 후기');await page.getByLabel('내용',{exact:true}).fill('갓 구운 빵이 정말 맛있었습니다. 다음에도 또 방문하고 싶습니다.');await page.getByRole('button',{name:'등록',exact:true}).click();await expect(page.getByRole('heading',{level:1})).toHaveText('테스트 빵 후기');
+ await page.getByRole('button',{name:'좋아요 0'}).click();await expect(page.getByRole('button',{name:'좋아요 1'})).toBeVisible();await page.getByRole('link',{name:'수정',exact:true}).click();await page.getByLabel('제목',{exact:true}).fill('수정한 빵 후기');await page.getByRole('button',{name:'수정 완료'}).click();await page.reload();await expect(page.getByRole('heading',{level:1})).toHaveText('수정한 빵 후기');await page.getByRole('button',{name:'삭제',exact:true}).click();await page.getByRole('button',{name:'확인',exact:true}).click();await expect(page).toHaveURL(/\/board$/);
+});
+test('inquiry CRUD with attachment preview, status and owner enforcement',async({page})=>{
+ await login(page);await page.goto('/inquiries/write');await page.getByRole('button',{name:'등록',exact:true}).click();await expect(page.getByText('카테고리를 선택해 주세요.',{exact:true})).toBeVisible();await page.getByLabel('카테고리',{exact:true}).selectOption('PRODUCT');await page.getByLabel('제목',{exact:true}).fill('케이크 보관 문의');await page.getByLabel('내용',{exact:true}).fill('케이크의 권장 보관 방법과 보관 기간이 궁금합니다.');await page.getByLabel('주문번호 (선택)').fill('TLJ-20260917-001');await page.locator('#attachments').setInputFiles('public/images/products/product-1.jpg');await page.getByRole('button',{name:'등록',exact:true}).click();await expect(page.getByRole('heading',{level:1})).toHaveText('케이크 보관 문의');await expect(page.locator('.entry-detail__images img')).toHaveCount(1);const url=page.url();
+ await page.getByRole('link',{name:'수정',exact:true}).click();await page.getByLabel('제목',{exact:true}).fill('보관 방법 재문의');await page.getByRole('button',{name:'수정 완료'}).click();await page.reload();await expect(page.getByRole('heading',{level:1})).toHaveText('보관 방법 재문의');await expect(page.locator('.entry-detail__images img')).toHaveCount(0);
+ await page.getByRole('button',{name:'삭제',exact:true}).click();await page.keyboard.press('Escape');await expect(page.getByRole('dialog')).not.toBeVisible();await page.getByRole('button',{name:'삭제',exact:true}).click();await page.getByRole('button',{name:'확인',exact:true}).click();await page.goto(url);await expect(page.getByText('문의를 찾을 수 없거나 조회 권한이 없습니다.')).toBeVisible();
+ await page.goto('/inquiries/inquiry-3');await expect(page.getByText('답변 완료 문의는 수정할 수 없습니다.')).toBeVisible();await expect(page.getByRole('link',{name:'수정',exact:true})).toHaveCount(0);
+ const checks=await page.evaluate(async()=>{const {useInquiryStore}=await import('/src/store/useInquiryStore.js');const {useAuthStore}=await import('/src/store/useAuthStore.js');const store=useInquiryStore.getState();let answered=false,review=false,foreign=false;try{await store.save('inquiry-3',{category:'ETC',title:'변경 시도',content:'충분히 긴 내용으로 수정을 시도합니다.'});}catch{answered=true;}try{await store.remove('inquiry-2');}catch{review=true;}useAuthStore.setState({user:{id:'other-user'}});try{await store.remove('inquiry-1');}catch{foreign=true;}return {answered,review,foreign,hidden:!store.getById('inquiry-1')};});expect(checks).toEqual({answered:true,review:true,foreign:true,hidden:true});
+});
+test('all public pages render and login form accessibility',async({page})=>{
+ for(const path of ['/menu','/store','/search','/membership','/login','/signup','/board','/products/1','/cart','/missing','/auth/error']){await page.goto(path);await expect(page.locator('main')).not.toBeEmpty();await expect(page.getByText('화면을 불러오지 못했습니다.',{exact:true})).toHaveCount(0);}
+ await page.goto('/login');const result=await new AxeBuilder({page}).withTags(['wcag2a','wcag2aa']).analyze();expect(result.violations).toEqual([]);
+});
+

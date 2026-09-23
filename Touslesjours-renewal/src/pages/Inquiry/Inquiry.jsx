@@ -1,0 +1,1 @@
+import InquiryContent from '../../components/Inquiry/InquiryContent';import './Inquiry.css';export default function Inquiry({mode,mine}){return <div className="inquiry-page container"><InquiryContent mode={mode} mine={mine}/></div>;}

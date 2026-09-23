@@ -1,0 +1,1 @@
+import BoardContent from '../../components/Board/BoardContent';import './Board.css';export default function Board({mode,mine}){return <div className="board-page container"><BoardContent mode={mode} mine={mine}/></div>;}

@@ -1,0 +1,2 @@
+import {useEffect,useState} from 'react';import {getProducts} from '../services/productService';
+export function useProducts(){const [state,setState]=useState({products:[],loading:true,error:''});useEffect(()=>{let alive=true;getProducts().then(products=>{if(alive)setState({products,loading:false,error:''});}).catch(e=>{if(alive)setState({products:[],loading:false,error:e.message});});return()=>{alive=false;};},[]);return state;}

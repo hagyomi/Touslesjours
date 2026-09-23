@@ -1,0 +1,3 @@
+import {Link} from 'react-router-dom';import {paths} from '../../routes/routePaths';import './Footer.css';
+export default function Footer(){return <footer className="footer"><div className="container footer__top"><div><p className="footer__brand">TOUS les JOURS</p><p>매일, 새로운 기쁨을 굽습니다.</p></div><nav aria-label="하단 메뉴"><Link to={paths.menu}>메뉴</Link><Link to={paths.store}>매장찾기</Link><Link to={paths.board}>소식 & 커뮤니티</Link><Link to={paths.inquiries}>고객문의</Link><Link to={paths.membership}>멤버십</Link></nav></div><div className="container footer__bottom"><p>TOUS les JOURS Renewal · 프런트엔드 포트폴리오 데모</p><p>실제 주문·결제는 진행되지 않습니다. 상품 가격은 데모용입니다.</p><a href="https://www.tlj.co.kr/index.asp" target="_blank" rel="noreferrer">뚜레쥬르 공식 홈페이지 ↗</a></div></footer>;}
+

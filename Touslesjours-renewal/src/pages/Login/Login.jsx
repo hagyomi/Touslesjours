@@ -1,0 +1,1 @@
+import AuthForm from '../../components/auth/AuthForm';import {PageHeading} from '../../components/common/UI';import './Login.css';export default function Login(){return <div className="login-page container"><PageHeading eyebrow="WELCOME TO TOUS LES JOURS" title="로그인"/><AuthForm signup={false}/></div>;}

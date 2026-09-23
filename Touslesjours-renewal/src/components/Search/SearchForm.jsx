@@ -1,0 +1,2 @@
+import {Search} from 'lucide-react';import './SearchForm.css';
+export default function SearchForm({value,onChange,onSubmit}){return <form className="search-form" onSubmit={onSubmit}><label className="sr-only" htmlFor="product-search">메뉴 검색</label><input id="product-search" placeholder="어떤 맛을 찾고 계신가요?" value={value} onChange={e=>onChange(e.target.value)}/><button type="submit" aria-label="검색"><Search/></button></form>;}
