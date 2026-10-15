@@ -1,38 +1,24 @@
 {
   "name": "touslesjours-renewal",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
     "preview": "vite preview",
-    "test": "playwright test",
-    "format": "prettier --write src tests *.js *.json index.html README.md"
+    "verify:refresh": "node scripts/verify-refresh.mjs",
+    "verify:css": "node scripts/verify-css-audit.mjs after",
+    "verify:structure": "node scripts/audit-structure.mjs"
   },
   "dependencies": {
     "gsap": "^3.15.0",
-    "lucide-react": "^1.47.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
-    "react-router-dom": "^7.18.4",
-    "swiper": "^14.2.0",
-    "zustand": "^5.0.15"
+    "swiper": "^14.3.0"
   },
   "devDependencies": {
-    "@axe-core/playwright": "^4.13.0",
-    "@eslint/js": "^10.0.1",
-    "@playwright/test": "^1.63.0",
-    "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.7",
     "@vitejs/plugin-react": "^6.1.1",
-    "eslint": "^10.11.0",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.7",
-    "globals": "^17.12.0",
-    "oxlint": "^1.81.0",
-    "prettier": "^3.9.8",
     "vite": "^8.3.0"
   }
 }

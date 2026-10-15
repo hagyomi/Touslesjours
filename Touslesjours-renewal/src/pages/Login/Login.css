@@ -1,1 +1,132 @@
-.login-page{max-width:640px}
+.login-page {
+  display: grid;
+  place-items: center;
+  min-height: 650px;
+  padding: 64px 20px 80px;
+  background: var(--color-hero-background);
+}
+
+.login-card {
+  width: min(100%, 460px);
+  padding: 40px;
+  border: 1px solid var(--color-divider);
+  border-radius: 20px;
+  background: var(--color-white);
+}
+
+.login-card__eyebrow {
+  display: block;
+  color: var(--color-brand-green);
+  text-align: center;
+  font-family: var(--font-family-display-en);
+  font-size: 18px;
+}
+
+.login-card h1 {
+  margin: 12px 0;
+  color: var(--color-brand-green);
+  text-align: center;
+  font-size: 32px;
+}
+
+.login-card__intro {
+  margin: 0 0 32px;
+  color: var(--color-hero-description);
+  text-align: center;
+}
+
+.login-card__form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.login-card__form label {
+  font-weight: 600;
+}
+
+.login-card__form input {
+  width: 100%;
+  min-height: 50px;
+  padding: 12px 16px;
+  border: 1px solid var(--color-menu-button-border);
+  border-radius: 8px;
+  background: var(--color-white);
+}
+
+.login-card__form input + label {
+  margin-top: 8px;
+}
+
+.login-card__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 50px;
+  padding: 12px 16px;
+  border: 1px solid var(--color-brand-green);
+  border-radius: 8px;
+  background: var(--color-white);
+  color: var(--color-brand-green);
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login-card__button:hover {
+  background: var(--color-hero-background);
+}
+
+.login-card__button--primary {
+  margin-top: 12px;
+  background: var(--color-brand-green);
+  color: var(--color-white);
+}
+
+.login-card__button--primary:hover {
+  background: #08462b;
+}
+
+.login-card__note {
+  margin: 24px 0 0;
+  color: var(--color-hero-description);
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.login-card__error {
+  margin: 0;
+  color: #a52b23;
+  font-size: 14px;
+}
+
+.login-card__success {
+  text-align: center;
+}
+
+.login-card__success h2 {
+  font-size: 22px;
+  color: var(--color-brand-green);
+}
+
+.login-card__success p {
+  color: var(--color-hero-description);
+}
+
+.login-card__success .login-card__button + .login-card__button {
+  margin-top: 12px;
+}
+
+@media (max-width: 480px) {
+  .login-page {
+    min-height: 580px;
+    padding: 40px 20px;
+  }
+
+  .login-card {
+    padding: 32px 24px;
+  }
+}

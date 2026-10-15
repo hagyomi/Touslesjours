@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GiftCard 미리보기</title>
+    <style>
+      body { padding: 40px 20px; }
+      #root { width: min(365.504px, 100%); margin-inline: auto; }
+    </style>
+  </head>
+  <body>
+    <main id="root"></main>
+    <script type="module">
+      import React from 'react';
+      import { createRoot } from 'react-dom/client';
+      import GiftCard from './src/components/GiftCard.jsx';
+      import './src/index.css';
+      createRoot(document.getElementById('root')).render(React.createElement(GiftCard));
+    </script>
+  </body>
+</html>

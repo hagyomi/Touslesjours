@@ -1,0 +1,23 @@
+.pick-card {
+  width: 372px;
+  max-width: 100%;
+}
+
+.pick-card__visual {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 372 / 438;
+  overflow: hidden;
+  border-radius: 228px 228px 0 0;
+  box-shadow: var(--shadow-pick-card);
+}
+
+.pick-card__image {
+  position: absolute;
+  top: -0.08%;
+  left: -13.6%;
+  display: block;
+  width: 126.94%;
+  height: 102.24%;
+  max-width: none;
+}

@@ -1,0 +1,77 @@
+.picks {
+  position: relative;
+  padding: 80px 0;
+  background: var(--color-picks-surface);
+}
+
+.picks__title {
+  margin: 0;
+  text-align: center;
+  font: 500 clamp(40px,3.65vw,70px)/1.1 var(--font-family-display-en);
+}
+
+.picks__title span {
+  color: var(--color-brand-green);
+}
+
+.picks__viewport {
+  margin-top: 59px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+}
+
+.picks__track {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+  padding-bottom: 32px;
+}
+
+.picks--pinned .picks__viewport {
+  overflow: hidden;
+  scroll-snap-type: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .picks__viewport {
+    cursor: grab;
+  }
+}
+
+.picks__viewport--dragging {
+  cursor: grabbing;
+  user-select: none;
+  scroll-snap-type: none;
+}
+
+.picks__slide {
+  flex: 0 0 auto;
+  width: min(372px,85vw);
+  height: auto;
+  scroll-snap-align: start;
+}
+
+.picks__controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.picks__controls button {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--color-menu-button-border);
+  border-radius: 50%;
+  color: var(--color-header-text);
+  background: transparent;
+  cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+  .picks {
+    min-height: 1063px;
+    padding: 100px 0 42px;
+  }
+}

@@ -1,2 +1,0 @@
-import {categories,categoryNames} from '../../services/productService';import './MenuFilters.css';
-export default function MenuFilters({category,onChange}){return <div className="menu-filters" aria-label="상품 카테고리">{categories.map(c=><button type="button" key={c} className={'menu-filters__button'+(category===c?' menu-filters__button--active':'')} aria-pressed={category===c} onClick={()=>onChange(c)}>{categoryNames[c]}</button>)}</div>;}

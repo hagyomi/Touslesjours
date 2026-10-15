@@ -1,0 +1,3 @@
+/* Compatibility stylesheet; keep one source of header styles. */
+
+@import './common/Header.css';

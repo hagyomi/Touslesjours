@@ -1,3 +1,12 @@
-import {Link} from 'react-router-dom';import {paths} from '../../routes/routePaths';import './Footer.css';
-export default function Footer(){return <footer className="footer"><div className="container footer__top"><div><p className="footer__brand">TOUS les JOURS</p><p>매일, 새로운 기쁨을 굽습니다.</p></div><nav aria-label="하단 메뉴"><Link to={paths.menu}>메뉴</Link><Link to={paths.store}>매장찾기</Link><Link to={paths.board}>소식 & 커뮤니티</Link><Link to={paths.inquiries}>고객문의</Link><Link to={paths.membership}>멤버십</Link></nav></div><div className="container footer__bottom"><p>TOUS les JOURS Renewal · 프런트엔드 포트폴리오 데모</p><p>실제 주문·결제는 진행되지 않습니다. 상품 가격은 데모용입니다.</p><a href="https://www.tlj.co.kr/index.asp" target="_blank" rel="noreferrer">뚜레쥬르 공식 홈페이지 ↗</a></div></footer>;}
+import { assets } from '../../data/home';
+import './Footer.css';
 
+export default function Footer() {
+  return <footer className="footer">
+    <div className="inner footer__inner"><h2>Baked fresh,<br />made for everyday moments.</h2>
+      <div className="footer__middle"><p>Good bread.<br />Brighter days.<br />Always with you.</p><img src={assets.imgObject15} alt="" width="201" height="173" loading="lazy" /><p>Our story, locations,<br />and more delicious moments<br />are always here for you.</p></div>
+      <a className="footer__logo" href="#top" aria-label="맨 위로"><img src={assets.imgImage30} alt="TOUS les JOURS" width="317" height="107" loading="lazy" /></a>
+      <div className="footer__bottom"><div className="footer__legal"><span>© CJ푸드빌㈜</span><a href="https://www.tlj.co.kr/">개인정보처리방침</a><a href="https://www.tlj.co.kr/">이용약관</a></div><div className="footer__contact"><span>고객센터</span><a href="tel:15770700">1577-0700</a></div></div>
+    </div>
+  </footer>;
+}

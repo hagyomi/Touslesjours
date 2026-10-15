@@ -1,0 +1,47 @@
+/* Shared typography and controls for MenuCard and Card. */
+
+.card__title,
+.menu-card__title {
+  margin: 0;
+  color: var(--color-header-text);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.card__description,
+.menu-card__description {
+  margin: 0;
+  color: var(--color-menu-description);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: normal;
+  overflow-wrap: anywhere;
+}
+
+.card__description span,
+.menu-card__description span {
+  display: block;
+}
+
+.card__button,
+.menu-card__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--color-hero-description);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: normal;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.card__button:disabled,
+.menu-card__button:disabled {
+  cursor: default;
+}

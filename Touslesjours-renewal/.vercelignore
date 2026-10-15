@@ -1,0 +1,8 @@
+node_modules
+dist
+artifacts
+.npm-cache
+.chrome-flip-check
+.chrome-hover-check
+scripts
+*-preview.html

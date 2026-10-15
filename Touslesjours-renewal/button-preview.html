@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button 미리보기</title>
+    <style>
+      body { padding: 40px 20px; }
+      #root { display: flex; justify-content: center; }
+    </style>
+  </head>
+  <body>
+    <main id="root"></main>
+    <script type="module">
+      import React from 'react';
+      import { createRoot } from 'react-dom/client';
+      import Button from './src/components/Button.jsx';
+      import './src/index.css';
+      createRoot(document.getElementById('root')).render(React.createElement(Button));
+    </script>
+  </body>
+</html>

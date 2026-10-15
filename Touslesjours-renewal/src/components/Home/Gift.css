@@ -1,0 +1,234 @@
+.gift {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0;
+  text-align: center;
+  background: var(--color-white);
+}
+
+.gift__inner {
+  position: relative;
+}
+
+.gift__title {
+  color: var(--color-header-text);
+  text-align: center;
+  font-family: var(--font-family-display-ko);
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: -3.5px;
+  margin: 0;
+}
+
+.gift__description {
+  margin: 24px 0 0;
+  color: var(--color-hero-description);
+  text-align: center;
+  font-family: var(--font-family-display-ko);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 130%;
+}
+
+.gift__grid {
+  display: grid;
+  gap: 32px;
+  margin-top: 96px;
+}
+
+.gift__card.gift-card {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 28.765px;
+}
+
+.gift__card:hover {
+  box-shadow: var(--shadow-pick-card);
+}
+
+.gift__card .gift-card__subtitle > span {
+  display: block;
+}
+
+.gift__card .gift-card__arrow {
+  top: 21.674px;
+  right: 31.242px;
+}
+
+.gift__card .gift-card__title {
+  top: 103.171px;
+  left: calc(50% - 0.723px);
+  font-size: 60px;
+}
+
+.gift__card .gift-card__subtitle {
+  top: 226.798px;
+  left: calc(50% - 1.099px);
+  font-size: 23px;
+  line-height: 1.4;
+}
+
+.gift__card .gift-card__description {
+  top: 297.152px;
+  left: calc(50% + 0.201px);
+  font-size: 17px;
+  font-weight: 200;
+  line-height: 1.3;
+}
+
+.gift__card--2 .gift-card__description,
+.gift__card--1 .gift-card__description {
+  left: calc(50% + 0.956px);
+}
+
+.gift__card--2 .gift-card__title,
+.gift__card--2 .gift-card__subtitle,
+.gift__card--1 .gift-card__title,
+.gift__card--1 .gift-card__subtitle {
+  left: calc(50% - 0.319px);
+}
+
+.gift__card--1 .gift-card__description {
+  white-space: pre;
+}
+
+.gift__roll-art,
+.gift__set-art,
+.gift__cake-art {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 0.319px);
+  transform: translateX(-50%);
+  width: 189.968px;
+  height: 103.271px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.gift__roll-art img,
+.gift__set-art img {
+  position: absolute;
+  top: -10%;
+  left: 8%;
+  width: 86.39%;
+  height: 130.43%;
+  max-width: none;
+}
+
+.gift__cake-art {
+  left: calc(50% - 0.638px);
+}
+
+@media (max-width: 599px) {
+  .gift__title {
+    font-size: clamp(42px, 10vw, 60px);
+    letter-spacing: -0.05em;
+  }
+
+  .gift__card .gift-card__title {
+    font-size: clamp(40px, 10vw, 60px);
+  }
+
+}
+
+.gift__cake-art img {
+  position: absolute;
+  top: -0.15%;
+  left: 12.87%;
+  width: 73.47%;
+  height: 110.93%;
+  max-width: none;
+}
+
+.gift__decoration {
+  position: absolute;
+  pointer-events: none;
+  max-width: none;
+}
+
+.gift__decoration--1 {
+  width: 46.73%;
+  height: 47.21%;
+  left: -4.64%;
+  top: 27.54%;
+  transform: rotate(-3.84deg);
+}
+
+.gift__decoration--2 {
+  width: 44.22%;
+  height: 45.75%;
+  right: 0;
+  top: 40.52%;
+}
+
+.gift__decoration--3 {
+  width: 6.23%;
+  height: 10.55%;
+  right: 2.31%;
+  top: 74.28%;
+  transform: rotate(29.37deg);
+}
+
+.gift__decoration--4 {
+  width: 5.41%;
+  height: 7.07%;
+  left: 5.63%;
+  top: 26.62%;
+}
+
+.gift__decoration--5 {
+  width: 15.26%;
+  height: 29.78%;
+  right: 0;
+  top: 12.9%;
+}
+
+.gift__decoration--6 {
+  width: 4.53%;
+  height: 7.99%;
+  left: 0;
+  top: 69.8%;
+}
+
+.gift__decoration--7 {
+  width: 7.31%;
+  height: 12.44%;
+  left: 12.6%;
+  top: 19.22%;
+  transform: rotate(14.89deg);
+}
+
+@media (min-width: 600px) and (max-width: 1439px) {
+  .gift__card .gift-card__title {
+    font-size: clamp(40px, 4vw, 60px);
+  }
+}
+
+@media (max-width: 1439px) {
+  .gift__card .gift-card__description {
+    width: calc(100% - 24px);
+    white-space: normal;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gift {
+    min-height: 1202px;
+    padding: 269px 0 262px;
+  }
+
+  .gift__description {
+    margin-top: 20px;
+  }
+
+  .gift__grid {
+    grid-template-columns: repeat(3, minmax(0, 466px));
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 111.6px;
+  }
+}

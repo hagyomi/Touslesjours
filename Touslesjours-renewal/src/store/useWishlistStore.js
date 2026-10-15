@@ -1,2 +1,0 @@
-import {create} from 'zustand';import {persist} from 'zustand/middleware';import {currentUserId} from './useAuthStore';
-export const useWishlistStore=create(persist((set)=>({byUser:{},toggle:productId=>{const id=currentUserId();if(!id)throw Error('로그인이 필요합니다.');set(s=>{const list=s.byUser[id]||[];return {byUser:{...s.byUser,[id]:list.includes(productId)?list.filter(p=>p!==productId):[...list,productId]}};});}}),{name:'tlj-wishlist'}));

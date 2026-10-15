@@ -1,0 +1,121 @@
+.hero {
+  display: grid;
+  background: var(--color-hero-background);
+}
+
+.hero__content {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-white);
+  min-width: 0;
+}
+
+.hero__copy {
+  padding: 64px 20px 180px;
+  text-align: center;
+}
+
+.hero__title {
+  margin: 0;
+  color: var(--color-header-text);
+  text-align: center;
+  font-family: var(--font-family-display-en);
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.hero__title span,
+.hero__description span {
+  display: block;
+}
+
+.hero__description {
+  margin: 24px 0 0;
+  color: var(--color-hero-description);
+  text-align: center;
+  font-family: var(--font-family-display-ko);
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.hero__character {
+  position: absolute;
+  bottom: -13px;
+  left: 13.333333%;
+  width: 246px;
+  height: 152px;
+  object-fit: cover;
+}
+
+.hero__visual {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  aspect-ratio: 960 / 835;
+}
+
+.hero__photo {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 960 / 835;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 900ms ease-in-out;
+}
+
+.hero__photo--visible {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero__title span {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  .hero__description {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 960px) {
+  .hero {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    height: 836px;
+  }
+
+  .hero__copy {
+    padding: 122px 20px 0;
+    transform: translateX(-0.5px);
+  }
+
+  .hero__character {
+    width: 308px;
+    height: 190px;
+  }
+
+  .hero__visual {
+    padding-top: 1px;
+  }
+
+  .hero__photo {
+    top: 1px;
+    height: 835px;
+  }
+}
+
+@media (max-width: 599px) {
+  .hero__title {
+    font-size: clamp(42px, 10vw, 60px);
+  }
+
+  .hero__description {
+    font-size: clamp(18px, 4.5vw, 25px);
+  }
+}

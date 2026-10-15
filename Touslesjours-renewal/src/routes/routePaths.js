@@ -1,1 +1,0 @@
-export const paths = { home:'/', menu:'/menu', store:'/store', search:'/search', membership:'/membership', login:'/login', signup:'/signup', cart:'/cart', board:'/board', inquiries:'/inquiries', mypage:'/mypage', profile:'/mypage/profile', myposts:'/mypage/posts', kakao:'/auth/kakao/callback', authError:'/auth/error', product:(id)=>'/products/'+id };

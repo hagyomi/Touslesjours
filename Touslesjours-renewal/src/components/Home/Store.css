@@ -1,0 +1,138 @@
+.store {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-white);
+  padding: 100px 0 140px;
+  text-align: center;
+}
+
+.store__inner {
+  position: relative;
+}
+
+.store__background {
+  position: absolute;
+  width: 80%;
+  height: 70.14%;
+  left: 16.3%;
+  top: 0;
+}
+
+.store__decoration {
+  position: absolute;
+  width: 66.83%;
+  height: 54.39%;
+  right: -28%;
+  top: 53%;
+  transform: rotate(-37.64deg);
+}
+
+.store__arch-label {
+  margin: 0 auto 24px;
+  color: var(--color-brand-green);
+  font-weight: 800;
+  font-size: 32px;
+  letter-spacing: .03em;
+}
+
+.store__photo {
+  position: relative;
+  width: min(537px,80%);
+  aspect-ratio: 537 / 716;
+  overflow: hidden;
+  margin: 0 auto;
+  border-radius: 382.818px 382.818px 38.282px 38.282px;
+  box-shadow: 10px 10px 20px rgb(0 0 0 / .5);
+}
+
+.store__photo img {
+  position: absolute;
+  max-width: none;
+  width: 130.49%;
+  height: 130.58%;
+  left: -15.2%;
+  top: -13.7%;
+}
+
+.store__title {
+  margin: 41px 0 20px;
+  align-self: stretch;
+  color: var(--color-header-text);
+  text-align: center;
+  font-family: var(--font-family-display-ko);
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+}
+
+.store__description {
+  margin: 0 0 30px;
+  align-self: stretch;
+  color: var(--color-header-text);
+  text-align: center;
+  font-family: var(--font-family-display-ko);
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 120%;
+}
+
+@media (min-width:1024px) {
+  .store {
+    height: 1460px;
+    padding-top: 275px;
+  }
+
+  .store__inner {
+    position: static;
+  }
+
+  .store__arch-label {
+    position: absolute;
+    top: 171px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 634px;
+    height: 236px;
+    margin: 0;
+    font-family: var(--font-family-base);
+    font-size: 77.952px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: 0;
+    text-align: left;
+  }
+
+  .store__arch-letter {
+    position: absolute;
+    left: var(--letter-x);
+    top: var(--letter-y);
+    width: var(--letter-width);
+    height: var(--letter-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .store__arch-glyph {
+    display: block;
+    flex: none;
+    width: var(--glyph-width);
+    height: var(--glyph-height);
+    transform: var(--letter-transform);
+    transform-origin: center;
+  }
+}
+
+@media (max-width: 599px) {
+  .store__title {
+    font-size: clamp(24px, 6vw, 40px);
+    word-break: keep-all;
+  }
+
+  .store__description {
+    font-size: clamp(18px, 4.5vw, 25px);
+  }
+}

@@ -1,0 +1,103 @@
+.menu {
+  padding: 48px 0 64px;
+  background: var(--color-menu-surface);
+  scroll-margin-top: 24px;
+}
+
+.menu__tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: 50px;
+  max-width: 100%;
+  overflow-x: auto;
+  margin-bottom: 48px;
+}
+
+.menu--gift {
+  background: var(--color-picks-surface);
+}
+
+.menu__tab {
+  flex-shrink: 0;
+  min-height: 44px;
+  padding: 9.5px 0;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  background: transparent;
+  color: var(--color-hero-description);
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: .03em;
+  cursor: pointer;
+}
+
+.menu__tab--active {
+  padding-inline: 20px;
+  color: var(--color-brand-green);
+  border-bottom-color: currentColor;
+}
+
+.menu__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 337px);
+  justify-content: center;
+  gap: 40px;
+}
+
+.menu__item {
+  position: relative;
+  min-width: 0;
+}
+
+.menu__item.menu-card {
+  width: 100%;
+  cursor: pointer;
+}
+
+.menu__empty {
+  grid-column: 1 / -1;
+  padding: 64px 0;
+  text-align: center;
+}
+
+.menu__cake-badge {
+  position: absolute;
+  z-index: 1;
+  left: 15px;
+  top: 320px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.menu .menu-card__body {
+  height: 156px;
+}
+
+@media (min-width: 768px) {
+  .menu__grid {
+    grid-template-columns: repeat(2,minmax(0,337px));
+    gap: 48px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .menu {
+    min-height: 1458px;
+    padding: 60px 0 75px;
+  }
+
+  .menu__tabs {
+    margin-bottom: 98px;
+  }
+
+  .menu__grid {
+    grid-template-columns: repeat(4,minmax(0,337px));
+    justify-content: space-between;
+    column-gap: 40px;
+    row-gap: 75px;
+  }
+
+  .menu--cake .menu__grid {
+    column-gap: 0;
+  }
+}

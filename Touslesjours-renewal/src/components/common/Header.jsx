@@ -1,3 +1,17 @@
-import {useState} from 'react';import {Link,NavLink,useLocation} from 'react-router-dom';import {ShoppingBag,Menu as MenuIcon,X,UserRound} from 'lucide-react';import {useAuthStore} from '../../store/useAuthStore';import {useCartStore} from '../../store/useCartStore';import {paths} from '../../routes/routePaths';import './Header.css';
-export default function Header(){const [open,setOpen]=useState(false);const {pathname}=useLocation();const user=useAuthStore(s=>s.user);const items=useCartStore(s=>s.items);const links=[['Menu',paths.menu],['Store',paths.store],['Search',paths.search],[user?'My page':'Login',user?paths.mypage:paths.login],['Membership',paths.membership]];return <header className="header"><div className="header__inner"><Link to="/" aria-label="뚜레쥬르 홈" onClick={()=>setOpen(false)}><img className="header__logo" src="/images/figma/imgImage12.png" alt="TOUS les JOURS" width="305" height="87"/></Link><nav aria-label="주 메뉴" className={'header__nav'+(open?' header__nav--open':'')}>{links.map(([label,to])=><NavLink key={to} to={to} onClick={()=>setOpen(false)} aria-current={pathname===to?'page':undefined}>{label}</NavLink>)}{!user&&<Link className="header__signup" to={paths.signup} onClick={()=>setOpen(false)}>회원가입</Link>}</nav><div className="header__tools">{user&&<Link to={paths.mypage} aria-label="마이페이지"><img className="header__avatar" src={user.profileImage} alt="" width="30" height="30"/></Link>}<Link className="header__cart" to={paths.cart} aria-label={'장바구니 '+items.reduce((n,i)=>n+i.quantity,0)+'개'}><ShoppingBag size={20}/>{items.length>0&&<span>{items.reduce((n,i)=>n+i.quantity,0)}</span>}</Link><button type="button" className="header__toggle" aria-label={open?'메뉴 닫기':'메뉴 열기'} aria-expanded={open} onClick={()=>setOpen(!open)}>{open?<X/>:<MenuIcon/>}</button></div></div></header>;}
+import { assets } from '../../data/home';
+import './Header.css';
 
+const navigation = [
+  { label: 'Menu', href: '/menu' },
+  { label: 'Store', href: '/#store' },
+  { label: 'Search' },
+  { label: 'Login', href: '/login' },
+  { label: 'Membership', href: '/#event' },
+];
+
+export default function Header({ onSearch, isMenuPage, isLoginPage }) {
+  return <header className="header" id="top"><div className="inner">
+    <a className="header__logo" href="/" aria-label="뚜레쥬르 홈"><img src={assets.imgImage12} alt="TOUS les JOURS" width="305" height="87" /></a>
+    <nav className="header__nav" aria-label="주요 메뉴"><ul className="header__list">{navigation.map(({ label, href }) => <li key={label}>{href ? <a className="header__link" href={href} aria-current={(label === 'Menu' && isMenuPage) || (label === 'Login' && isLoginPage) ? 'page' : undefined}>{label}</a> : <button type="button" className="header__link" onClick={onSearch}>{label}</button>}</li>)}</ul></nav>
+  </div></header>;
+}
