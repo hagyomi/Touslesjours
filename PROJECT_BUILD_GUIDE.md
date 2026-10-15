@@ -13,6 +13,24 @@
 
 ---
 
+### 2-1. 메인 페이지 (`/`) — 섹션 순서
+
+| # | 섹션 | 컴포넌트(예상) |
+|---|---|---|
+| 1 | Header | - |
+| 2 | Hero | - |
+| 3 | Menu | `menu` |
+| 4 | Gift | `gift` |
+| 5 | Picks | `pick`, `card` |
+| 6 | Event | `event`, `button` |
+| 7 | Story | - |
+| 8 | Store | `button` |
+| 9 | Footer | - |
+
+`Header`와 `Footer`는 `components/common`에서 관리하고 `App.jsx`의 공통 레이아웃에 배치한다. 메인 콘텐츠는 `pages/Home/Home.jsx`에서 위 순서로 조합하며 페이지 전용 컴포넌트는 `components/Home`에 배치한다. 표의 `-`는 별도 하위 컴포넌트가 지정되지 않았음을 뜻한다.
+
+React 컴포넌트와 JSX·CSS 파일명은 PascalCase(`Menu`, `Gift`, `Pick`, `Card`, `Event`, `Button`)로 작성한다. Event와 Store에서 공유하는 `Button`은 `components/common`에서 관리한다. 메인 페이지 폴더 구조는 `Design-token.md`의 구체적인 기준을 따른다.
+
 ## 2. 기술 스택
 
 - React Vite, JavaScript

@@ -1,52 +1,51 @@
-import { withBaseUrl } from '../js/paths.js';
 export const assets = {
-  "imgImage12": withBaseUrl("/images/figma/image12.png"),
-  "imgVisual2": withBaseUrl("/images/figma/visual2.png"),
-  "imgImage39": withBaseUrl("/images/figma/image39.png"),
-  "imgFrame78": withBaseUrl("/images/figma/frame78.png"),
-  "imgFrame79": withBaseUrl("/images/figma/frame79.png"),
-  "imgFrame80": withBaseUrl("/images/figma/frame80.png"),
-  "imgFrame81": withBaseUrl("/images/figma/frame81.png"),
-  "imgObject": withBaseUrl("/images/figma/object.png"),
-  "imgFrame82": withBaseUrl("/images/figma/frame82.png"),
-  "imgFrame83": withBaseUrl("/images/figma/frame83.png"),
-  "imgFrame84": withBaseUrl("/images/figma/frame84.png"),
-  "imgFrame85": withBaseUrl("/images/figma/frame85.png"),
-  "imgObject1": withBaseUrl("/images/figma/object1.png"),
-  "imgObject2": withBaseUrl("/images/figma/object2.png"),
-  "imgObject3": withBaseUrl("/images/figma/object3.png"),
-  "imgObject4": withBaseUrl("/images/figma/object4.png"),
-  "imgObject5": withBaseUrl("/images/figma/object5.png"),
-  "imgObject6": withBaseUrl("/images/figma/object6.png"),
-  "imgObject7": withBaseUrl("/images/figma/object7.png"),
-  "imgImage44": withBaseUrl("/images/figma/image44.png"),
-  "imgImage45": withBaseUrl("/images/figma/image45.png"),
-  "imgImage46": withBaseUrl("/images/figma/image46.png"),
-  "imgPick": withBaseUrl("/images/figma/pick.png"),
-  "imgFrame65": withBaseUrl("/images/figma/frame65.png"),
-  "imgFrame66": withBaseUrl("/images/figma/frame66.png"),
-  "imgFrame67": withBaseUrl("/images/figma/frame67.png"),
-  "imgFrame68": withBaseUrl("/images/figma/frame68.png"),
-  "imgFrame69": withBaseUrl("/images/figma/frame69.png"),
-  "imgImage381": withBaseUrl("/images/figma/image381.png"),
-  "imgUnion": withBaseUrl("/images/figma/union.png"),
-  "imgObject8": withBaseUrl("/images/figma/object8.png"),
-  "imgObject9": withBaseUrl("/images/figma/object9.png"),
-  "imgObject10": withBaseUrl("/images/figma/object10.png"),
-  "imgObject11": withBaseUrl("/images/figma/object11.png"),
-  "imgObject12": withBaseUrl("/images/figma/object12.png"),
-  "imgObject13": withBaseUrl("/images/figma/object13.png"),
-  "imgObject14": withBaseUrl("/images/figma/object14.png"),
-  "imgFrame40": withBaseUrl("/images/figma/frame40.png"),
-  "imgBackground": withBaseUrl("/images/figma/background.png"),
-  "imgImage70": withBaseUrl("/images/figma/image70.png"),
-  "imgRectangle1": withBaseUrl("/images/figma/rectangle1.png"),
-  "imgImage30": withBaseUrl("/images/figma/image30.png"),
-  "imgObject15": withBaseUrl("/images/figma/object15.png"),
-  "imgIconsBiArrowRightCircle": withBaseUrl("/images/figma/icons-bi-arrow-right-circle.svg"),
-  "imgVector12": withBaseUrl("/images/figma/vector12.svg"),
-  "imgIconsBiArrowRightCircle1": withBaseUrl("/images/figma/icons-bi-arrow-right-circle1.svg"),
-  "imgUnion1": withBaseUrl("/images/figma/union1.svg")
+  "imgImage12": "/images/figma/image12.png",
+  "imgVisual2": "/images/figma/visual2.png",
+  "imgImage39": "/images/figma/image39.png",
+  "imgFrame78": "/images/figma/frame78.png",
+  "imgFrame79": "/images/figma/frame79.png",
+  "imgFrame80": "/images/figma/frame80.png",
+  "imgFrame81": "/images/figma/frame81.png",
+  "imgObject": "/images/figma/object.png",
+  "imgFrame82": "/images/figma/frame82.png",
+  "imgFrame83": "/images/figma/frame83.png",
+  "imgFrame84": "/images/figma/frame84.png",
+  "imgFrame85": "/images/figma/frame85.png",
+  "imgObject1": "/images/figma/object1.png",
+  "imgObject2": "/images/figma/object2.png",
+  "imgObject3": "/images/figma/object3.png",
+  "imgObject4": "/images/figma/object4.png",
+  "imgObject5": "/images/figma/object5.png",
+  "imgObject6": "/images/figma/object6.png",
+  "imgObject7": "/images/figma/object7.png",
+  "imgImage44": "/images/figma/image44.png",
+  "imgImage45": "/images/figma/image45.png",
+  "imgImage46": "/images/figma/image46.png",
+  "imgPick": "/images/figma/pick.png",
+  "imgFrame65": "/images/figma/frame65.png",
+  "imgFrame66": "/images/figma/frame66.png",
+  "imgFrame67": "/images/figma/frame67.png",
+  "imgFrame68": "/images/figma/frame68.png",
+  "imgFrame69": "/images/figma/frame69.png",
+  "imgImage381": "/images/figma/image381.png",
+  "imgUnion": "/images/figma/union.png",
+  "imgObject8": "/images/figma/object8.png",
+  "imgObject9": "/images/figma/object9.png",
+  "imgObject10": "/images/figma/object10.png",
+  "imgObject11": "/images/figma/object11.png",
+  "imgObject12": "/images/figma/object12.png",
+  "imgObject13": "/images/figma/object13.png",
+  "imgObject14": "/images/figma/object14.png",
+  "imgFrame40": "/images/figma/frame40.png",
+  "imgBackground": "/images/figma/background.png",
+  "imgImage70": "/images/figma/image70.png",
+  "imgRectangle1": "/images/figma/rectangle1.png",
+  "imgImage30": "/images/figma/image30.png",
+  "imgObject15": "/images/figma/object15.png",
+  "imgIconsBiArrowRightCircle": "/images/figma/icons-bi-arrow-right-circle.svg",
+  "imgVector12": "/images/figma/vector12.svg",
+  "imgIconsBiArrowRightCircle1": "/images/figma/icons-bi-arrow-right-circle1.svg",
+  "imgUnion1": "/images/figma/union1.svg"
 };
 
 export const menuProducts = [
@@ -58,7 +57,7 @@ export const menuProducts = [
       "생크림을 샌드해 고소한 쌀 풍미를 느낄 수 있는",
       "쌀 케이크"
     ],
-    "image": withBaseUrl("/images/figma/frame78.png"),
+    "image": "/images/figma/frame78.png",
     "category": "Cake",
     "collection": "Cake",
     "crop": [
@@ -77,7 +76,7 @@ export const menuProducts = [
       "고소한 흑임자 크림을 더해",
       "고소한 풍미를 담은 롤케이크"
     ],
-    "image": withBaseUrl("/images/figma/frame79.png"),
+    "image": "/images/figma/frame79.png",
     "category": "Cake",
     "collection": "Roll Cake",
     "crop": [
@@ -96,7 +95,7 @@ export const menuProducts = [
       "헤이즐넛 크림과 스프레드를 더해",
       "풍미를 느낄 수 있는 롤케이크"
     ],
-    "image": withBaseUrl("/images/figma/frame80.png"),
+    "image": "/images/figma/frame80.png",
     "category": "Cake",
     "collection": "Roll Cake",
     "crop": [
@@ -115,7 +114,7 @@ export const menuProducts = [
       "프로스팅이 한 입에 가득!",
       "떠먹는 디저트 타입의 뚜레쥬르 당근 케이크"
     ],
-    "image": withBaseUrl("/images/figma/frame81.png"),
+    "image": "/images/figma/frame81.png",
     "category": "Cake",
     "collection": "Cake",
     "crop": [
@@ -133,7 +132,7 @@ export const menuProducts = [
       "딸기, 요거트, 블루베리 요거트 크림을 더한",
       "얇고 바삭한 웨이퍼 샌드 선물세트"
     ],
-    "image": withBaseUrl("/images/figma/frame82.png"),
+    "image": "/images/figma/frame82.png",
     "category": "Desserts",
     "collection": "Gift Set",
     "crop": [
@@ -151,7 +150,7 @@ export const menuProducts = [
       "바삭한 쿠키 사이 버터 크림과 솔티 카라멜이",
       "입안 가득 퍼지는 갓샌드"
     ],
-    "image": withBaseUrl("/images/figma/frame83.png"),
+    "image": "/images/figma/frame83.png",
     "category": "Desserts",
     "collection": "Gift Set",
     "crop": [
@@ -169,7 +168,7 @@ export const menuProducts = [
       "달콤한 약과로 구성되어",
       "온 가족이 나눠 먹기 편한 전통 약과 선물세트"
     ],
-    "image": withBaseUrl("/images/figma/frame84.png"),
+    "image": "/images/figma/frame84.png",
     "category": "Desserts",
     "collection": "Gift Set",
     "crop": [
@@ -187,7 +186,7 @@ export const menuProducts = [
       "통단팥, 흑임자, 밤 맛으로 구성된",
       "국화 모양의 모나카 세트"
     ],
-    "image": withBaseUrl("/images/figma/frame85.png"),
+    "image": "/images/figma/frame85.png",
     "category": "Desserts",
     "collection": "Gift Set",
     "crop": [
@@ -209,7 +208,7 @@ export const dailyPicks = [
       "폭신한 화이트 시트 위에 딸기를 가득 올려낸",
       "쁘띠 파라다이스 케이크"
     ],
-    "image": withBaseUrl("/images/figma/pick.png"),
+    "image": "/images/figma/pick.png",
     "category": "Cake",
     "crop": [
       124.02,
@@ -226,7 +225,7 @@ export const dailyPicks = [
       "쿠키앤크림과 바닐라 무스를 샌드한 뒤",
       "서울의 낮과 밤을 표현한 반전 야광 케이크"
     ],
-    "image": withBaseUrl("/images/figma/frame65.png"),
+    "image": "/images/figma/frame65.png",
     "category": "Cake",
     "crop": [
       124.27,
@@ -243,7 +242,7 @@ export const dailyPicks = [
       "상큼한 당근라페, 아삭한 오이를 더한",
       "통밀샌드위치"
     ],
-    "image": withBaseUrl("/images/figma/frame66.png"),
+    "image": "/images/figma/frame66.png",
     "category": "Deli",
     "crop": [
       124.27,
@@ -260,7 +259,7 @@ export const dailyPicks = [
       "초코시트 위로 신선한 생과일을 가득 올린",
       "시그니처 로열 퀸"
     ],
-    "image": withBaseUrl("/images/figma/frame67.png"),
+    "image": "/images/figma/frame67.png",
     "category": "Cake",
     "crop": [
       124.17,
@@ -277,7 +276,7 @@ export const dailyPicks = [
       "고소한 코코넛칩이 어우러져",
       "상큼달콤한 열대과일 빙수"
     ],
-    "image": withBaseUrl("/images/figma/frame68.png"),
+    "image": "/images/figma/frame68.png",
     "category": "Desserts",
     "crop": [
       124.17,
@@ -294,7 +293,7 @@ export const dailyPicks = [
       "바삭한 나초칩, 짭조름한 치즈맛 시즈닝이",
       "어우러져 자꾸만 생각나는 맛의 패스트리"
     ],
-    "image": withBaseUrl("/images/figma/frame69.png"),
+    "image": "/images/figma/frame69.png",
     "category": "Bread",
     "crop": [
       124.17,

@@ -1,4 +1,3 @@
-import { withBaseUrl } from '../js/paths.js';
 // Figma con1_Bread (284:771), in design order.
 export const breadProducts = [
   {
@@ -9,7 +8,7 @@ export const breadProducts = [
       "웨지감자, 진한 오지치즈 소스를 더한",
       "풍미 가득 간식빵"
     ],
-    "image": withBaseUrl("/images/menu/bread/bread-0.png"),
+    "image": "/images/menu/bread/bread-0.png",
     "category": "Bread",
     "collection": "Bread",
     "crop": [
@@ -27,7 +26,7 @@ export const breadProducts = [
       "진한 카카오 풍미와 호두의 고소함을 담은",
       "부드러운 초코 바게트"
     ],
-    "image": withBaseUrl("/images/menu/bread/bread-1.png"),
+    "image": "/images/menu/bread/bread-1.png",
     "category": "Bread",
     "collection": "Bread",
     "crop": [
@@ -45,7 +44,7 @@ export const breadProducts = [
       "달콤짭조름한 소불고기를 듬뿍 담아",
       "든든하게 즐기는 조리빵"
     ],
-    "image": withBaseUrl("/images/menu/bread/bread-2.png"),
+    "image": "/images/menu/bread/bread-2.png",
     "category": "Bread",
     "collection": "Bread",
     "crop": [
@@ -63,7 +62,7 @@ export const breadProducts = [
       "겉면에 바삭한 나초칩 토핑으로",
       "맛과 식감을 살린 고로케"
     ],
-    "image": withBaseUrl("/images/menu/bread/bread-3.png"),
+    "image": "/images/menu/bread/bread-3.png",
     "category": "Bread",
     "collection": "Bread",
     "crop": [
@@ -80,7 +79,7 @@ export const breadProducts = [
       "짭조름한 햄과 치즈가 돌돌 말린",
       "한 입에 쏙! 먹기 좋은 바삭한 패스트리"
     ],
-    "image": withBaseUrl("/images/menu/bread/bread-4.png"),
+    "image": "/images/menu/bread/bread-4.png",
     "category": "Bread",
     "collection": "Bread",
     "crop": [
@@ -98,7 +97,7 @@ export const breadProducts = [
       "버터 한 조각을 올려 풍미를 더하고,",
       "데워 먹으면 더욱 맛있는 간식빵"
     ],
-    "image": withBaseUrl("/images/menu/bread/bread-5.png"),
+    "image": "/images/menu/bread/bread-5.png",
     "category": "Bread",
     "collection": "Bread",
     "crop": [
@@ -116,7 +115,7 @@ export const breadProducts = [
       "듬뿍 들어가 밤 맛의 풍부함을",
       "한 층 업그레이드한 제품"
     ],
-    "image": withBaseUrl("/images/menu/bread/bread-6.png"),
+    "image": "/images/menu/bread/bread-6.png",
     "category": "Bread",
     "collection": "Bread",
     "crop": [
@@ -133,7 +132,7 @@ export const breadProducts = [
       "마늘버터로 구워낸 바삭한 식빵에 부드러운",
       "계란 오믈렛과 새우가 어우러진 미니 토스트"
     ],
-    "image": withBaseUrl("/images/menu/bread/bread-7.png"),
+    "image": "/images/menu/bread/bread-7.png",
     "category": "Bread",
     "collection": "Bread",
     "crop": [

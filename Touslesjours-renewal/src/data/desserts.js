@@ -1,4 +1,3 @@
-import { withBaseUrl } from '../js/paths.js';
 // Figma con1_Desserts (292:1294), in design order.
 export const dessertProducts = [
   {
@@ -9,7 +8,7 @@ export const dessertProducts = [
       "진한 다크 초콜릿을 입혀",
       "아그작한 식감을 살린 제품"
     ],
-    "image": withBaseUrl("/images/menu/desserts/dessert-0.png"),
+    "image": "/images/menu/desserts/dessert-0.png",
     "category": "Desserts",
     "collection": "Desserts",
     "crop": [
@@ -26,7 +25,7 @@ export const dessertProducts = [
       "쫀득한 브라우니에 초코 크런치를 더해",
       "바삭한 식감을 즐길 수 있는 달콤한 브라우니"
     ],
-    "image": withBaseUrl("/images/menu/desserts/dessert-1.png"),
+    "image": "/images/menu/desserts/dessert-1.png",
     "category": "Desserts",
     "collection": "Desserts",
     "crop": [
@@ -44,7 +43,7 @@ export const dessertProducts = [
       "상큼한 베리잼을 더해",
       "달콤하게 즐길 수 있는 디저트"
     ],
-    "image": withBaseUrl("/images/menu/desserts/dessert-2.png"),
+    "image": "/images/menu/desserts/dessert-2.png",
     "category": "Desserts",
     "collection": "Desserts",
     "crop": [
@@ -61,7 +60,7 @@ export const dessertProducts = [
       "부드러운 크림치즈에 보랏빛 우베 한 스푼!",
       "달콤한 화이트 초콜릿이 더해진 촉촉한 브라우니"
     ],
-    "image": withBaseUrl("/images/menu/desserts/dessert-3.png"),
+    "image": "/images/menu/desserts/dessert-3.png",
     "category": "Desserts",
     "collection": "Desserts",
     "crop": [
@@ -79,7 +78,7 @@ export const dessertProducts = [
       "샌드된 바삭한 타르트에",
       "상큼한 블루베리까지 어우러진 디저트"
     ],
-    "image": withBaseUrl("/images/menu/desserts/dessert-4.png"),
+    "image": "/images/menu/desserts/dessert-4.png",
     "category": "Desserts",
     "collection": "Desserts",
     "crop": [
@@ -96,7 +95,7 @@ export const dessertProducts = [
       "고소한 코코넛 슬라이스로",
       "겉바속촉의 달콤한 코코넛 구움과자"
     ],
-    "image": withBaseUrl("/images/menu/desserts/dessert-5.png"),
+    "image": "/images/menu/desserts/dessert-5.png",
     "category": "Desserts",
     "collection": "Desserts",
     "crop": [
@@ -113,7 +112,7 @@ export const dessertProducts = [
       "꿀을 넣어 더 부드럽고 촉촉하게",
       "입안에서 사르르 녹는 카스테라"
     ],
-    "image": withBaseUrl("/images/menu/desserts/dessert-6.png"),
+    "image": "/images/menu/desserts/dessert-6.png",
     "category": "Desserts",
     "collection": "Desserts",
     "crop": [
@@ -130,7 +129,7 @@ export const dessertProducts = [
       "진한 버터향에 겉은 바삭하고",
       "속은 촉촉한 클래식 휘낭시에"
     ],
-    "image": withBaseUrl("/images/menu/desserts/dessert-7.png"),
+    "image": "/images/menu/desserts/dessert-7.png",
     "category": "Desserts",
     "collection": "Desserts",
     "crop": [

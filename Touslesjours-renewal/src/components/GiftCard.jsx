@@ -1,4 +1,3 @@
-import { withBaseUrl } from '../js/paths.js';
 import './GiftCard.css';
 
 export default function GiftCard({
@@ -9,7 +8,7 @@ export default function GiftCard({
     onClick,
     className = '',
     children,
-    arrowSrc = withBaseUrl("/images/common/gift-card-arrow.svg"),
+    arrowSrc = '/images/common/gift-card-arrow.svg',
     arrowSize = 32,
 }) {
     const lines = Array.isArray(description) ? description : description.split('\n');

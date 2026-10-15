@@ -1,4 +1,3 @@
-import { withBaseUrl } from '../js/paths.js';
 // Figma con1_Cake (290:1033), in design order.
 export const cakeProducts = [
   {
@@ -8,7 +7,7 @@ export const cakeProducts = [
       "탱글탱글한 귤과 상큼한 요거트 크림이",
       "한입 가득 기분 좋게 퍼지는 생크림 케이크"
     ],
-    "image": withBaseUrl("/images/menu/cake/cake-0.png"),
+    "image": "/images/menu/cake/cake-0.png",
     "category": "Cake",
     "collection": "Cake",
     "crop": [
@@ -26,7 +25,7 @@ export const cakeProducts = [
       "진하고 풍미깊은 가나슈와 달콤한 쿠키 크럼블을 샌딩한",
       "바닐라 생크림 케이크"
     ],
-    "image": withBaseUrl("/images/menu/cake/cake-1.png"),
+    "image": "/images/menu/cake/cake-1.png",
     "category": "Cake",
     "collection": "Cake",
     "crop": [
@@ -44,7 +43,7 @@ export const cakeProducts = [
       "상큼한 딸기 콤포트를 샌드하고",
       "생딸기와 핑크 리본으로 장식한 미니 케이크"
     ],
-    "image": withBaseUrl("/images/menu/cake/cake-2.png"),
+    "image": "/images/menu/cake/cake-2.png",
     "category": "Cake",
     "collection": "Cake",
     "crop": [
@@ -61,7 +60,7 @@ export const cakeProducts = [
       "폭신한 초코 시트에 달콤한 초코 생크림과",
       "향긋한 체리를 샌드한 초코 체리 케이크"
     ],
-    "image": withBaseUrl("/images/menu/cake/cake-3.png"),
+    "image": "/images/menu/cake/cake-3.png",
     "category": "Cake",
     "collection": "Cake",
     "crop": [
@@ -78,7 +77,7 @@ export const cakeProducts = [
       "복숭아, 고구마, 녹차, 초코, 4가지",
       "베스트 케이크를 한 번에 즐길 수 있는 케이크"
     ],
-    "image": withBaseUrl("/images/menu/cake/cake-4.png"),
+    "image": "/images/menu/cake/cake-4.png",
     "category": "Cake",
     "collection": "Cake",
     "crop": [
@@ -96,7 +95,7 @@ export const cakeProducts = [
       "톡톡 터지는 화이트펄이 올라간",
       "한입에 떠먹는 양즈깐루 스타일 미니 케이크"
     ],
-    "image": withBaseUrl("/images/menu/cake/cake-5.png"),
+    "image": "/images/menu/cake/cake-5.png",
     "category": "Cake",
     "collection": "Cake",
     "crop": [
@@ -113,7 +112,7 @@ export const cakeProducts = [
       "상큼한 샤인머스캣과 블루베리를 가득 올린",
       "생크림 맛집 뚜레쥬르의 시그니처 케이크"
     ],
-    "image": withBaseUrl("/images/menu/cake/cake-6.png"),
+    "image": "/images/menu/cake/cake-6.png",
     "category": "Cake",
     "collection": "Cake",
     "crop": [
@@ -131,7 +130,7 @@ export const cakeProducts = [
       "복숭아맛 생크림을 샌드하여 향긋한 복숭아맛을",
       "가득 느낄 수 있는 생크림 케이크"
     ],
-    "image": withBaseUrl("/images/menu/cake/cake-7.png"),
+    "image": "/images/menu/cake/cake-7.png",
     "category": "Cake",
     "collection": "Cake",
     "crop": [

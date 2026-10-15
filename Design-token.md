@@ -1,5 +1,24 @@
 # TOUS les JOURS Renewal 디자인 토큰 가이드
 
+### 2026-10-01 메인 구현 기준
+
+현재 React 메인 화면은 [수정2 · 1:13](https://www.figma.com/design/0d10rUy86bgr3L5eQu03fq/?node-id=1-13)을 기준으로 구현했다. 아래의 이전 프레임 분석과 구분하며, 구현 세부 내용은 `touslesjours-renewal/README.md`에서 확인한다.
+
+`src/styles/variables.css`에 아래 시안 색상을 역할별 토큰으로 추가했다.
+
+| 토큰 | 값 | 용도 |
+| --- | --- | --- |
+| `--color-brand-green` | `#0b5a38` | 추천 제목·브랜드 문자 |
+| `--color-menu-surface` | `#fff5f2` | 메뉴 배경 |
+| `--color-picks-surface` | `#fff5f1` | 추천 배경 |
+| `--color-gift-surface` | `#e7e7d8` | 선물 카드 |
+| `--color-story-surface` | `#f9f6ef` | 브랜드 소개 배경 |
+| `--color-story-accent` | `#7c8161` | Meets 강조 |
+| `--color-text-inverse` | `#fffcf2` | 브라운 배경의 문자 |
+| `--color-divider` | `#eeeae1` | 이벤트 구분선 |
+
+1920px 데스크톱의 섹션 높이와 순서는 시안을 따른다. 모바일은 별도 프레임이 없어 한 열 배치로 조정했다. Playfair Display의 실제 이탤릭과 IBM Plex Sans를 로컬 파일로 추가했고, MaruBuri는 기존 Light 파일을 사용하므로 SemiBold 제목의 굵기에는 차이가 있을 수 있다.
+
 ## 1. 문서 목적
 
 이 문서는 TOUS les JOURS Renewal React 팀 프로젝트에서 사용하는 디자인 토큰과 적용 기준을 정의한다.
@@ -34,20 +53,23 @@
 | Login | 로그인 | `pages/Login` | 동일 이름 폴더 생성 대상에서 제외 |
 | Membership | 멤버십 | `pages/Membership` | `components/Membership` |
 
-### 메인 페이지 섹션 구성
+### 2-1. 메인 페이지 (`/`) — 섹션 순서
 
 | # | 섹션 | 컴포넌트(예상) |
 |---|---|---|
-| 1 | Header | `Header` (글로벌) |
-| 2 | Hero | `HeroSection` |
-| 3 | Quick Category | `QuickCategorySection` |
-| 4 | Recommended Menu | `RecommendedMenuSection` |
-| 5 | Event | `EventSection` |
-| 6 | Bakery Story | `BakeryStorySection` |
-| 7 | Store / Service | `StoreServiceSection` |
-| 8 | Footer | `Footer` (글로벌) |
+| 1 | Header | - |
+| 2 | Hero | - |
+| 3 | Menu | `menu` |
+| 4 | Gift | `gift` |
+| 5 | Picks | `pick`, `card` |
+| 6 | Event | `event`, `button` |
+| 7 | Story | - |
+| 8 | Store | `button` |
+| 9 | Footer | - |
 
 `Header`와 `Footer`는 `components/common`에서 관리하는 글로벌 컴포넌트로 사용한다. 나머지 섹션은 `components/Home`에서 관리하고 `pages/Home/Home.jsx`에서 순서대로 조합한다.
+
+표의 `-`는 별도 하위 컴포넌트가 지정되지 않았음을 뜻한다. 예상 컴포넌트 표기는 유지하되 React 컴포넌트와 JSX·CSS 파일명은 PascalCase(`Menu`, `Gift`, `Pick`, `Card`, `Event`, `Button`)로 작성한다. Event와 Store에서 공유하는 `Button`은 `components/common`에서 관리한다.
 
 ### 페이지·컴포넌트 폴더 명명 규칙
 
@@ -101,22 +123,22 @@ src/
 │   ├── common/
 │   │   ├── Header.jsx
 │   │   ├── Header.css
+│   │   ├── Button.jsx
+│   │   ├── Button.css
 │   │   ├── Footer.jsx
 │   │   └── Footer.css
 │   ├── auth/                    # 로그인·회원가입 공유 UI가 필요할 때 생성
 │   ├── Home/
-│   │   ├── HeroSection.jsx
-│   │   ├── HeroSection.css
-│   │   ├── QuickCategorySection.jsx
-│   │   ├── QuickCategorySection.css
-│   │   ├── RecommendedMenuSection.jsx
-│   │   ├── RecommendedMenuSection.css
-│   │   ├── EventSection.jsx
-│   │   ├── EventSection.css
-│   │   ├── BakeryStorySection.jsx
-│   │   ├── BakeryStorySection.css
-│   │   ├── StoreServiceSection.jsx
-│   │   └── StoreServiceSection.css
+│   │   ├── Menu.jsx
+│   │   ├── Menu.css
+│   │   ├── Gift.jsx
+│   │   ├── Gift.css
+│   │   ├── Pick.jsx
+│   │   ├── Pick.css
+│   │   ├── Card.jsx
+│   │   ├── Card.css
+│   │   ├── Event.jsx
+│   │   └── Event.css
 │   ├── Menu/                    # 메뉴 페이지 전용 컴포넌트
 │   ├── Store/                   # 매장찾기 페이지 전용 컴포넌트
 │   ├── Search/                  # 통합검색 페이지 전용 컴포넌트
@@ -131,7 +153,7 @@ src/
 - `Home`, `Menu`, `Store`, `Search`, `Membership`은 `pages`와 `components`에서 같은 폴더 이름을 사용한다.
 - `Login`, `SignUp`은 `pages`에만 대응 폴더를 두며, 각 화면에서만 쓰는 폼은 해당 페이지 폴더에서 관리한다.
 - `Header`와 `Footer`는 `App.jsx`의 공통 레이아웃에서 조합한다. `Home.jsx` 등 개별 페이지에 중복 배치하지 않는다.
-- 컴포넌트는 자기 이름과 같은 CSS 파일을 직접 import한다. 예: `HeroSection.jsx` → `./HeroSection.css`.
+- 컴포넌트는 자기 이름과 같은 CSS 파일을 직접 import한다. 예: `Gift.jsx` → `./Gift.css`.
 - `public/images`의 페이지별 폴더는 해당 페이지 전용 이미지가 필요할 때 생성한다. 검색 결과는 기존 상품 이미지를 재사용한다.
 
 ---

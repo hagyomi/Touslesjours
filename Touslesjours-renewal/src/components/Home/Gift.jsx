@@ -1,4 +1,3 @@
-import { withBaseUrl } from '../../js/paths.js';
 import { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -131,27 +130,27 @@ export default function Gift({ onSelect }) {
                             description={gift.description}
                             arrowSrc={
                                 index === 2
-                                    ? withBaseUrl("/images/common/gift-set-arrow.svg")
+                                    ? '/images/common/gift-set-arrow.svg'
                                     : index === 1
-                                      ? withBaseUrl("/images/common/gift-roll-arrow.svg")
-                                    : withBaseUrl("/images/common/gift-cake-arrow.svg")
+                                      ? '/images/common/gift-roll-arrow.svg'
+                                    : '/images/common/gift-cake-arrow.svg'
                             }
                             arrowSize={40.79844665527344}
                             onClick={event => onSelect(gift.title, event.currentTarget)}
                         >
                             {index === 0 && (
                                 <span className="gift__cake-art" aria-hidden="true">
-                                    <img src={withBaseUrl("/images/common/gift-cake-illustration.png")} alt="" />
+                                    <img src="/images/common/gift-cake-illustration.png" alt="" />
                                 </span>
                             )}
                             {index === 1 && (
                                 <span className="gift__roll-art" aria-hidden="true">
-                                    <img src={withBaseUrl("/images/common/gift-roll-illustration.png")} alt="" />
+                                    <img src="/images/common/gift-roll-illustration.png" alt="" />
                                 </span>
                             )}
                             {index === 2 && (
                                 <span className="gift__set-art" aria-hidden="true">
-                                    <img src={withBaseUrl("/images/common/gift-set-illustration.png")} alt="" />
+                                    <img src="/images/common/gift-set-illustration.png" alt="" />
                                 </span>
                             )}
                         </GiftCard>

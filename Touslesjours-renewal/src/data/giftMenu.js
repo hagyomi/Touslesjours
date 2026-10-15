@@ -1,4 +1,3 @@
-import { withBaseUrl } from '../js/paths.js';
 // Figma con1_Gift (310:1605), in design order.
 export const giftMenuProducts = [
   {
@@ -8,7 +7,7 @@ export const giftMenuProducts = [
       "이즈니 버터의 깊은 풍미에 흑설탕의 은은한 단맛을 더해",
       "브라운 빛으로 완성한 부드럽고 촉촉한 카스테라"
     ],
-    "image": withBaseUrl("/images/menu/gift/gift-0.png"),
+    "image": "/images/menu/gift/gift-0.png",
     "category": "Gift",
     "collection": "Gift Set",
     "crop": [
@@ -26,7 +25,7 @@ export const giftMenuProducts = [
       "고소한 흑임자 크림을 더해",
       "고소한 풍미를 담은 롤케이크"
     ],
-    "image": withBaseUrl("/images/menu/gift/gift-1.png"),
+    "image": "/images/menu/gift/gift-1.png",
     "category": "Gift",
     "collection": "Roll Cake",
     "crop": [
@@ -44,7 +43,7 @@ export const giftMenuProducts = [
       "헤이즐넛 크림과 스프레드를 더해",
       "풍미를 느낄 수 있는 롤케이크"
     ],
-    "image": withBaseUrl("/images/menu/gift/gift-2.png"),
+    "image": "/images/menu/gift/gift-2.png",
     "category": "Gift",
     "collection": "Roll Cake",
     "crop": [
@@ -62,7 +61,7 @@ export const giftMenuProducts = [
       "말돈 소금을 더해 고급스러운 짭짤함과",
       "담백한 맛을 즐길 수 있는 파운드"
     ],
-    "image": withBaseUrl("/images/menu/gift/gift-3.png"),
+    "image": "/images/menu/gift/gift-3.png",
     "category": "Gift",
     "collection": "Gift Set",
     "crop": [
@@ -79,7 +78,7 @@ export const giftMenuProducts = [
       "딸기, 요거트, 블루베리 요거트 크림을 더한",
       "얇고 바삭한 웨이퍼 샌드 선물세트"
     ],
-    "image": withBaseUrl("/images/menu/gift/gift-4.png"),
+    "image": "/images/menu/gift/gift-4.png",
     "category": "Gift",
     "collection": "Gift Set",
     "crop": [
@@ -97,7 +96,7 @@ export const giftMenuProducts = [
       "달콤한 딸기 크림, 은은한 말차 크림이 샌드된",
       "랑그드샤 선물세트"
     ],
-    "image": withBaseUrl("/images/menu/gift/gift-5.png"),
+    "image": "/images/menu/gift/gift-5.png",
     "category": "Gift",
     "collection": "Gift Set",
     "crop": [
@@ -114,7 +113,7 @@ export const giftMenuProducts = [
       "달콤하고 구수한 단팥,흑임자,호박,고구마,말차",
       "다섯 가지 앙금을 담은 만주 선물 세트"
     ],
-    "image": withBaseUrl("/images/menu/gift/gift-6.png"),
+    "image": "/images/menu/gift/gift-6.png",
     "category": "Gift",
     "collection": "Gift Set",
     "crop": [
@@ -131,7 +130,7 @@ export const giftMenuProducts = [
       "버터 풍미가 가득한",
       "부드러운 식감의 쿠키세트"
     ],
-    "image": withBaseUrl("/images/menu/gift/gift-7.png"),
+    "image": "/images/menu/gift/gift-7.png",
     "category": "Gift",
     "collection": "Gift Set",
     "crop": [

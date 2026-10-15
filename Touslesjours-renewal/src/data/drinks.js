@@ -1,4 +1,3 @@
-import { withBaseUrl } from '../js/paths.js';
 // Figma con1_Drinks (303:1027), in design order.
 export const drinkProducts = [
   {
@@ -9,7 +8,7 @@ export const drinkProducts = [
       "비율로 블렌드 하여 커피 본연의 맛과",
       "향을 살린 시원한 아메리카노"
     ],
-    "image": withBaseUrl("/images/menu/drinks/drink-0.png"),
+    "image": "/images/menu/drinks/drink-0.png",
     "category": "Drinks",
     "collection": "Drinks",
     "crop": [
@@ -25,7 +24,7 @@ export const drinkProducts = [
     "description": [
       "시원하게 즐기는 복숭아 홍차"
     ],
-    "image": withBaseUrl("/images/menu/drinks/drink-1.png"),
+    "image": "/images/menu/drinks/drink-1.png",
     "category": "Drinks",
     "collection": "Drinks",
     "crop": [
@@ -42,7 +41,7 @@ export const drinkProducts = [
       "잉글리쉬 블랙퍼스트 티로 만들어",
       "홍차 풍미와 부드러움이 가득한 로얄 밀크티"
     ],
-    "image": withBaseUrl("/images/menu/drinks/drink-2.png"),
+    "image": "/images/menu/drinks/drink-2.png",
     "category": "Drinks",
     "collection": "Drinks",
     "crop": [
@@ -59,7 +58,7 @@ export const drinkProducts = [
       "꿀유자차에 새콤한 레몬즙을 넣어",
       "더욱 맛있는 유자차"
     ],
-    "image": withBaseUrl("/images/menu/drinks/drink-3.png"),
+    "image": "/images/menu/drinks/drink-3.png",
     "category": "Drinks",
     "collection": "Drinks",
     "crop": [
@@ -76,7 +75,7 @@ export const drinkProducts = [
       "톡톡 씹히는 달콤한 딸기 다이스와",
       "고소한 우유의 조화가 돋보이는 과일라떼"
     ],
-    "image": withBaseUrl("/images/menu/drinks/drink-4.png"),
+    "image": "/images/menu/drinks/drink-4.png",
     "category": "Drinks",
     "collection": "Drinks",
     "crop": [
@@ -94,7 +93,7 @@ export const drinkProducts = [
       "코코넛칩 토핑, 블루베리와 달콤한 바닐라 아이스크림까지",
       "풍성하게 즐기는 컵빙수"
     ],
-    "image": withBaseUrl("/images/menu/drinks/drink-5.png"),
+    "image": "/images/menu/drinks/drink-5.png",
     "category": "Drinks",
     "collection": "Drinks",
     "crop": [
@@ -111,7 +110,7 @@ export const drinkProducts = [
       "달콤한 우유 베이스에 달콤한 팥과 떡, 아이스크림을 올려",
       "혼자서도 풍성하게 즐기는 컵빙수"
     ],
-    "image": withBaseUrl("/images/menu/drinks/drink-6.png"),
+    "image": "/images/menu/drinks/drink-6.png",
     "category": "Drinks",
     "collection": "Drinks",
     "crop": [
@@ -128,7 +127,7 @@ export const drinkProducts = [
       "달콤한 우유 쉐이크에 보랏빛 우베가 더해져",
       "입안에서 사르르 ~ 녹는 우베 쉐이크"
     ],
-    "image": withBaseUrl("/images/menu/drinks/drink-7.png"),
+    "image": "/images/menu/drinks/drink-7.png",
     "category": "Drinks",
     "collection": "Drinks",
     "crop": [
