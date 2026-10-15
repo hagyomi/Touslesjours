@@ -1,8 +1,9 @@
+import { withBaseUrl } from '../js/paths.js';
 import Card from './Card';
 import './PickCard.css';
 
 export default function PickCard({
-    image = '/images/picks/strawberry-cake.png',
+    image = withBaseUrl("/images/picks/strawberry-cake.png"),
     imageAlt = '딸기가 올라간 생크림 케이크',
     className = '',
     imageStyle,

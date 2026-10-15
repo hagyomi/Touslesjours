@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { withBaseUrl } from '../../js/paths';
 import './Login.css';
 
 export default function Login() {
@@ -31,7 +32,7 @@ export default function Login() {
         <h2>테스트 로그인 완료</h2>
         <p>테스트 회원님, 환영합니다.</p>
         <p>화면 확인을 위한 데모이며 실제 회원 인증은 수행하지 않습니다.</p>
-        <a className="login-card__button login-card__button--primary" href="/menu">메뉴 둘러보기</a>
+        <a className="login-card__button login-card__button--primary" href={withBaseUrl('menu/')}>메뉴 둘러보기</a>
         <button className="login-card__button" type="button" onClick={() => { setIsTestLoggedIn(false); setUserId(''); }}>로그인 화면으로 돌아가기</button>
       </div> : <>
         <form className="login-card__form" onSubmit={handleSubmit}>

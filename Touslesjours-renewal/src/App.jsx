@@ -5,13 +5,15 @@ import DetailDialog from './components/common/DetailDialog';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Menu from './components/Home/Menu';
+import { getAppPath } from './js/paths';
 import './App.css';
 
 export default function App() {
   const [selection, setSelection] = useState(null);
   const [giftOrigin, setGiftOrigin] = useState(null);
-  const isMenuPage = /^\/menu(?:\/products)?\/?$/.test(window.location.pathname);
-  const isLoginPage = /^\/login\/?$/.test(window.location.pathname);
+  const pathname = getAppPath();
+  const isMenuPage = /^\/menu(?:\/products)?\/?$/.test(pathname);
+  const isLoginPage = /^\/login\/?$/.test(pathname);
   return (
     <>
       <a className="skip-link" href="#main-content">본문 바로가기</a>

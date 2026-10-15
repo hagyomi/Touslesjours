@@ -1,10 +1,11 @@
+import { withBaseUrl } from '../js/paths.js';
 import { useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import './common/CardContent.css';
 import './MenuCard.css';
 
 export default function MenuCard({
-    image = '/images/menu/menu-placeholder.png',
+    image = withBaseUrl("/images/menu/menu-placeholder.png"),
     imageAlt = '',
     title = 'text',
     description = ['text', 'text', 'text'],

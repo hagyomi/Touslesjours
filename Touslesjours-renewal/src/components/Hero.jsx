@@ -1,3 +1,4 @@
+import { withBaseUrl } from '../js/paths.js';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -6,10 +7,10 @@ import './Hero.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const photos = [
-    { src: '/images/figma/visual2.png', alt: '햇살 아래 테이블에 놓인 갓 구운 빵과 커피' },
-    { src: '/images/figma/hero-image80.png', alt: '햇살이 비치는 테이블 위 딸기 케이크와 크루아상, 샌드위치와 커피' },
-    { src: '/images/figma/hero-bread-table.png', alt: '테이블 위 갓 구운 빵' },
-    { src: '/images/figma/hero-coffee-table.png', alt: '꽃과 커피가 놓인 테이블 위 빵' },
+    { src: withBaseUrl("/images/figma/visual2.png"), alt: '햇살 아래 테이블에 놓인 갓 구운 빵과 커피' },
+    { src: withBaseUrl("/images/figma/hero-image80.png"), alt: '햇살이 비치는 테이블 위 딸기 케이크와 크루아상, 샌드위치와 커피' },
+    { src: withBaseUrl("/images/figma/hero-bread-table.png"), alt: '테이블 위 갓 구운 빵' },
+    { src: withBaseUrl("/images/figma/hero-coffee-table.png"), alt: '꽃과 커피가 놓인 테이블 위 빵' },
 ];
 
 export default function Hero() {
@@ -133,7 +134,7 @@ export default function Hero() {
                 <img
                     ref={characterRef}
                     className="hero__character"
-                    src="/images/figma/image39.png"
+                    src={withBaseUrl("/images/figma/image39.png")}
                     alt=""
                     width="308"
                     height="190"

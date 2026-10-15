@@ -1,3 +1,4 @@
+import { withBaseUrl } from '../js/paths.js';
 import './EventCard.css';
 
 export default function EventCard({
@@ -25,7 +26,7 @@ export default function EventCard({
             </span>
             <img
                 className="event-card__arrow"
-                src="/images/common/event-card-arrow.svg"
+                src={withBaseUrl("/images/common/event-card-arrow.svg")}
                 alt=""
                 width="30"
                 height="30"

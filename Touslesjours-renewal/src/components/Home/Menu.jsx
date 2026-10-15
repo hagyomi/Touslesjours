@@ -1,3 +1,4 @@
+import { withBaseUrl } from '../../js/paths.js';
 import { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import MenuCard from '../MenuCard';
@@ -36,8 +37,8 @@ export default function Menu({ onSelect }) {
         </div>
         <div ref={gridRef} className="menu__grid" id="menu-panel" role="tabpanel" aria-labelledby={`menu-tab-${categories.indexOf(category)}`}>
           {items.map((item, index) => <MenuCard className="menu__item" animateImage key={item.id} image={item.image} imageAlt={item.name} imageStyle={cropStyle(item.crop)} title={item.name} description={item.description} onClick={event => setExpanded({ item, origin: event.currentTarget.closest('.menu-card') })}>
-            {category === 'Cake' && index === 1 && <img className="menu__cake-badge" src="/images/menu/cake/badge.png" alt="" width="39" height="62" />}
-            {category === 'Gift' && index === 1 && <img className="menu__cake-badge" src="/images/menu/gift/badge.png" alt="" width="39" height="62" />}
+            {category === 'Cake' && index === 1 && <img className="menu__cake-badge" src={withBaseUrl("/images/menu/cake/badge.png")} alt="" width="39" height="62" />}
+            {category === 'Gift' && index === 1 && <img className="menu__cake-badge" src={withBaseUrl("/images/menu/gift/badge.png")} alt="" width="39" height="62" />}
           </MenuCard>)}
           {!items.length && <p className="menu__empty" role="status">현재 등록된 {category} 제품이 없습니다. 다른 메뉴를 선택해 주세요.</p>}
         </div>

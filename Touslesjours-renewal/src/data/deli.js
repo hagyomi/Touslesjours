@@ -1,3 +1,4 @@
+import { withBaseUrl } from '../js/paths.js';
 // Figma con1_Deli (286:859), in design order.
 export const deliProducts = [
   {
@@ -8,7 +9,7 @@ export const deliProducts = [
       "루꼴라, 하바티치즈, 허브드레싱을 더해,",
       "타코의 외관과 풍미를 담아낸 핫샌드위치"
     ],
-    "image": "/images/menu/deli/deli-0.png",
+    "image": withBaseUrl("/images/menu/deli/deli-0.png"),
     "category": "Deli",
     "collection": "Deli",
     "crop": [
@@ -25,7 +26,7 @@ export const deliProducts = [
       "홀그레인으로 고소한 맛을 낸 계란샐러드에",
       "촉촉한 반숙란을 더한 브라운 샌드위치"
     ],
-    "image": "/images/menu/deli/deli-1.png",
+    "image": withBaseUrl("/images/menu/deli/deli-1.png"),
     "category": "Deli",
     "collection": "Deli",
     "crop": [
@@ -43,7 +44,7 @@ export const deliProducts = [
       "아삭한 야채와 고소한 아몬드를 더한",
       "브라운 샌드위치"
     ],
-    "image": "/images/menu/deli/deli-2.png",
+    "image": withBaseUrl("/images/menu/deli/deli-2.png"),
     "category": "Deli",
     "collection": "Deli",
     "crop": [
@@ -61,7 +62,7 @@ export const deliProducts = [
       "베이컨을 넣어 따뜻하게 데워먹는",
       "포카치아 샌드위치"
     ],
-    "image": "/images/menu/deli/deli-3.png",
+    "image": withBaseUrl("/images/menu/deli/deli-3.png"),
     "category": "Deli",
     "collection": "Deli",
     "crop": [
@@ -78,7 +79,7 @@ export const deliProducts = [
       "부드러운 우유식빵에 에그후라이와 베이컨,",
       "아삭한 양상추, 토마토가 들어간 샌드위치"
     ],
-    "image": "/images/menu/deli/deli-4.png",
+    "image": withBaseUrl("/images/menu/deli/deli-4.png"),
     "category": "Deli",
     "collection": "Deli",
     "crop": [
@@ -96,7 +97,7 @@ export const deliProducts = [
       "쫀득한 쌀베이글에 담아낸",
       "저당 샌드위치"
     ],
-    "image": "/images/menu/deli/deli-5.png",
+    "image": withBaseUrl("/images/menu/deli/deli-5.png"),
     "category": "Deli",
     "collection": "Deli",
     "crop": [
@@ -113,7 +114,7 @@ export const deliProducts = [
       "돼지 뒷다리로 만든 잠봉에 고소한 버터를",
       "넣어 만든 소금버터롤 샌드"
     ],
-    "image": "/images/menu/deli/deli-6.png",
+    "image": withBaseUrl("/images/menu/deli/deli-6.png"),
     "category": "Deli",
     "collection": "Deli",
     "crop": [
@@ -130,7 +131,7 @@ export const deliProducts = [
       "그릴드 닭가슴살, 토마토, 계란, 치즈, 오이,",
       "베이컨, 화이트바베큐"
     ],
-    "image": "/images/menu/deli/deli-7.png",
+    "image": withBaseUrl("/images/menu/deli/deli-7.png"),
     "category": "Deli",
     "collection": "Deli",
     "crop": [
