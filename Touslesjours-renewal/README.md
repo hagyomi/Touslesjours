@@ -1,5 +1,13 @@
 # 뚜레쥬르 React 메인 페이지
 
+## GitHub Pages 배포
+
+저장소 루트의 `.github/workflows/deploy-pages.yml`이 `main` 푸시 또는 수동 실행 시 `Touslesjours-renewal`에서 Node 22와 `npm ci`로 빌드하고 `dist`를 GitHub Pages에 배포합니다. 저장소 Settings → Pages의 Source는 **GitHub Actions**로 설정합니다.
+
+워크플로에서만 `VITE_BASE_PATH=/<저장소명>/`을 지정합니다. 현재 주소는 `https://hagyomi.github.io/Touslesjours/`입니다. 기본 로컬/Vercel 빌드는 `/`를 유지하며 기존 `vercel.json`을 사용합니다.
+
+Pages 빌드는 기존 이미지·내부 링크의 루트 경로를 빌드 시 저장소 경로로 변환하고, 메뉴·로그인용 정적 HTML 진입점을 생성합니다. 컴포넌트 구조·상품 원본·디자인은 유지합니다. Pages 빌드와 preview 서버가 실행 중이면 `node scripts/verify-pages.mjs`로 경로·이미지·상품 목록을 검사할 수 있습니다.
+
 [Figma 수정2 · 1:13](https://www.figma.com/design/0d10rUy86bgr3L5eQu03fq/?node-id=1-13)을 React + Vite + 일반 CSS로 구현했습니다.
 
 ## 실행

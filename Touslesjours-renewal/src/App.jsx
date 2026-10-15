@@ -10,8 +10,12 @@ import './App.css';
 export default function App() {
   const [selection, setSelection] = useState(null);
   const [giftOrigin, setGiftOrigin] = useState(null);
-  const isMenuPage = /^\/menu(?:\/products)?\/?$/.test(window.location.pathname);
-  const isLoginPage = /^\/login\/?$/.test(window.location.pathname);
+  const base = import.meta.env.BASE_URL;
+  const pathname = window.location.pathname.startsWith(base)
+    ? `/${window.location.pathname.slice(base.length)}`
+    : window.location.pathname;
+  const isMenuPage = /^\/menu(?:\/products)?\/?$/.test(pathname);
+  const isLoginPage = /^\/login\/?$/.test(pathname);
   return (
     <>
       <a className="skip-link" href="#main-content">본문 바로가기</a>
