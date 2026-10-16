@@ -6,8 +6,9 @@ import { fileURLToPath } from 'node:url';
 
 const projectDirectory = path.dirname(fileURLToPath(import.meta.url));
 
-// Pages uses /<repository>/; local development and Vercel keep the root path.
-const base = process.env.VITE_BASE_PATH || '/';
+// Production builds target branch-based GitHub Pages; development stays at root.
+const base = process.env.VITE_BASE_PATH || (process.env.NODE_ENV === 'production' ? '/Touslesjours/' : '/');
+const outputDirectory = path.resolve(projectDirectory, '../docs');
 
 const githubPagesPaths = {
   name: 'github-pages-paths',
@@ -21,10 +22,11 @@ const githubPagesPaths = {
     return rebased === code ? null : { code: rebased, map: null };
   },
   async closeBundle() {
+    await writeFile(path.join(outputDirectory, '.nojekyll'), '');
     if (base === '/') return;
-    const html = await readFile('dist/index.html', 'utf8');
+    const html = await readFile(path.join(outputDirectory, 'index.html'), 'utf8');
     for (const route of ['menu', 'menu/products', 'login']) {
-      const directory = path.join('dist', route);
+      const directory = path.join(outputDirectory, route);
       await mkdir(directory, { recursive: true });
       await writeFile(path.join(directory, 'index.html'), html);
     }
@@ -34,7 +36,7 @@ const githubPagesPaths = {
 export default defineConfig({
   root: path.resolve(projectDirectory, '..'),
   publicDir: path.join(projectDirectory, 'public'),
-  build: { outDir: path.join(projectDirectory, 'dist'), emptyOutDir: true },
+  build: { outDir: outputDirectory, emptyOutDir: true },
   base,
   plugins: [githubPagesPaths, react()],
   server: {
