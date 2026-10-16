@@ -2,6 +2,9 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const projectDirectory = path.dirname(fileURLToPath(import.meta.url));
 
 // Pages uses /<repository>/; local development and Vercel keep the root path.
 const base = process.env.VITE_BASE_PATH || '/';
@@ -29,6 +32,9 @@ const githubPagesPaths = {
 };
 
 export default defineConfig({
+  root: path.resolve(projectDirectory, '..'),
+  publicDir: path.join(projectDirectory, 'public'),
+  build: { outDir: path.join(projectDirectory, 'dist'), emptyOutDir: true },
   base,
   plugins: [githubPagesPaths, react()],
   server: {
