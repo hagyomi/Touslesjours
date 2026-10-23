@@ -23,7 +23,21 @@
   width: min(744px,100%);
   height: auto;
   aspect-ratio: 1;
+  filter: drop-shadow(1px 0 0 var(--color-text-inverse))
+    drop-shadow(-1px 0 0 var(--color-text-inverse))
+    drop-shadow(0 1px 0 var(--color-text-inverse))
+    drop-shadow(0 -1px 0 var(--color-text-inverse));
+}
+
+.story__baker-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1;
   object-fit: cover;
+  mask-image: url('/images/figma/baker-video-mask.png');
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
 }
 
 .story__copy {
