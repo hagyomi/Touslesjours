@@ -1,8 +1,7 @@
-import { useId, useLayoutEffect, useRef } from 'react';
+﻿import { useId, useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { assets } from '../../data/home';
-import BakerVideo from './BakerVideo';
 import './Story.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -111,7 +110,7 @@ export default function Story() {
   return <section className="story" id="story" aria-label="뚜레쥬르 브랜드 이야기">
     <div ref={breadRef} className="story__bread">
       <div className="inner story__inner">
-        <div className="story__visual"><h2>Good Bread<br />Brighter Days</h2><BakerVideo /></div>
+        <div className="story__visual"><h2>Good Bread<br />Brighter Days</h2><div className="story__baker"><video className="story__baker-video" src={`${import.meta.env.BASE_URL}videos/baker-kneading-dough.mp4`} aria-label="반죽을 빚는 제빵사의 손" width="744" height="744" autoPlay muted loop playsInline preload="metadata" /></div></div>
         <div className="story__copy"><div><h3>Freshly Baked, Every Day</h3><p>뚜레쥬르는 매일 매장에서 직접 빵을 구워 신선함을 전합니다.<br />하루에도 여러 번 갓 구운 빵을 준비해 언제 방문해도<br />따뜻하고 맛있는 빵을 만날 수 있도록 노력합니다.<br />고소한 향과 따스한 온기로 매일의 일상에 맛있는 행복을 더합니다.</p></div>
           <div><h3>Good Ingredients, Better Bread</h3><p>좋은 빵은 좋은 재료에서 시작됩니다.<br />뚜레쥬르는 오랜 제분 기술을 바탕으로 개발한<br />베이커리 맞춤 밀가루와 엄선한 재료를 사용합니다.<br />빵마다 어울리는 맛과 식감을 살리고, 좋은 재료를 기본으로<br />건강하고 정직한 빵과 케이크를 만들기 위해 노력합니다.</p></div>
         </div>
