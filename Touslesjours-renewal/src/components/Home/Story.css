@@ -20,7 +20,7 @@
 .story__baker {
   display: block;
   margin: 80px auto 0;
-  width: min(744px,100%);
+  width: min(744.1426px,100%);
   height: auto;
   aspect-ratio: 1;
   filter: drop-shadow(1px 0 0 var(--color-text-inverse))
@@ -203,15 +203,17 @@
   }
 
   .story__inner {
+    position: static;
     grid-template-columns: 1fr 1fr;
     gap: clamp(48px,7.3vw,140px);
   }
 
   .story__baker {
     position: absolute;
-    top: 291px;
-    left: 33px;
-    width: min(744px,42vw);
+    top: 412px;
+    left: max(20px, calc((100vw - 1920px) / 2 + 193px));
+    margin: 0;
+    width: min(744.1426px,42vw);
   }
 
   .story__copy {
