@@ -1,0 +1,228 @@
+.store-finder {
+  min-height: 75vh;
+  padding: 64px 0 100px;
+  background: var(--color-story-surface);
+}
+
+.store-finder__heading {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.store-finder__heading > span, .store-finder__eyebrow {
+  color: var(--color-brand-green);
+  font: 500 14px/1.5 var(--font-family-display-en);
+  letter-spacing: 2px;
+}
+
+.store-finder__heading h1 {
+  margin: 16px 0;
+  color: var(--color-brand-green);
+  font: 600 44px/1.3 var(--font-family-display-ko);
+}
+
+.store-finder__heading p {
+  color: var(--color-hero-description);
+}
+
+.store-finder__search {
+  display: flex;
+  align-items: end;
+  gap: 16px;
+  padding: 28px;
+  border: 1px solid var(--color-divider);
+  border-radius: 20px;
+  background: var(--color-white);
+}
+
+.store-finder__search label {
+  display: grid;
+  gap: 10px;
+  min-width: 140px;
+  font-size: 14px;
+}
+
+.store-finder__keyword {
+  flex: 1;
+}
+
+.store-finder__search input, .store-finder__search select {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px;
+  border: 1px solid var(--color-divider);
+  border-radius: 8px;
+  background: var(--color-white);
+  color: var(--color-header-text);
+  font: inherit;
+}
+
+.store-finder__submit {
+  min-height: 48px;
+  font-size: 16px;
+}
+
+.store-finder__reset {
+  min-height: 48px;
+  padding: 8px;
+  border: 0;
+  background: transparent;
+  color: var(--color-hero-description);
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.store-finder__count {
+  margin-bottom: 20px;
+}
+
+.store-finder__count strong {
+  color: var(--color-brand-green);
+}
+
+.store-finder__layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.store-finder__results ul {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.store-finder__item {
+  position: relative;
+  display: grid;
+  gap: 10px;
+  width: 100%;
+  padding: 24px 52px 24px 24px;
+  border: 1px solid var(--color-divider);
+  border-radius: 16px;
+  background: var(--color-white);
+  color: var(--color-header-text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.store-finder__item:hover, .store-finder__item--selected {
+  border-color: var(--color-brand-green);
+}
+
+.store-finder__region {
+  color: var(--color-brand-green);
+  font-size: 13px;
+}
+
+.store-finder__name {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.store-finder__address, .store-finder__phone {
+  color: var(--color-hero-description);
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.store-finder__arrow {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  color: var(--color-brand-green);
+  font-size: 24px;
+}
+
+.store-finder__details {
+  position: sticky;
+  top: 24px;
+  padding: 40px;
+  border: 1px solid var(--color-divider);
+  border-radius: 24px;
+  background: var(--color-gift-surface);
+}
+
+.store-finder__details h2 {
+  margin: 24px 0 12px;
+  color: var(--color-brand-green);
+  font: 600 32px/1.4 var(--font-family-display-ko);
+  overflow-wrap: anywhere;
+}
+
+.store-finder__detail-intro {
+  color: var(--color-hero-description);
+}
+
+.store-finder__details dl {
+  display: grid;
+  gap: 12px;
+  margin: 32px 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-menu-button-border);
+}
+
+.store-finder__details dt {
+  font-size: 13px;
+  color: var(--color-hero-description);
+}
+
+.store-finder__details dd {
+  margin: 0 0 12px;
+  line-height: 1.7;
+}
+
+.store-finder__details a {
+  color: inherit;
+}
+
+.store-finder__visit-note {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--color-hero-description);
+}
+
+.store-finder__empty {
+  padding: 40px 24px;
+  border: 1px solid var(--color-divider);
+  border-radius: 16px;
+  text-align: center;
+}
+
+.store-finder__empty p {
+  margin-bottom: 24px;
+}
+
+@media (max-width: 767px) {
+  .store-finder {
+    padding: 40px 0 64px;
+  }
+  .store-finder__heading h1 {
+    font-size: 34px;
+  }
+  .store-finder__search {
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+  .store-finder__search label {
+    min-width: 0;
+    width: 100%;
+  }
+  .store-finder__keyword {
+    flex: auto;
+  }
+  .store-finder__layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .store-finder__details {
+    position: static;
+    padding: 28px;
+  }
+}

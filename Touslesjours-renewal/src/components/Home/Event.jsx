@@ -18,7 +18,7 @@ export default function Event({ onSelect }) {
       className="event__card" key={item.name} number={index + 1}
       title={item.name} description={item.description} onClick={() => onSelect(item)}
     />)}</div>
-    <div className="event__more"><div><h3>더 많은 혜택</h3><Button href="https://www.tlj.co.kr/">VIEW MORE</Button></div><img src={assets.imgImage381} alt="" width="251" height="224" loading="lazy" /></div>
+    <div className="event__more"><div><h3>더 많은 혜택</h3><Button>VIEW MORE</Button></div><img src={assets.imgImage381} alt="" width="251" height="224" loading="lazy" /></div>
     <p className="event__notice">이벤트별 기간 및 혜택은 상이하며, 일부 매장 및 제품은 행사 대상에서 제외될 수 있습니다.<br />쿠폰 및 제휴 할인은 중복 적용이 제한될 수 있으며, 자세한 내용은 각 이벤트 페이지에서 확인해 주세요.</p>
   </div></section>;
 }

@@ -30,7 +30,7 @@ export default function Store() {
       <div className="store__photo"><img src={assets.imgRectangle1} alt="초록색 간판과 따뜻한 조명이 있는 뚜레쥬르 매장" loading="lazy" /></div>
       <h2 className="store__title" id="store-title">가까운 뚜레쥬르에서<br />갓 구운 신선함을 만나보세요.</h2>
       <p className="store__description">일상의 가까운 곳에, 뚜레쥬르가 있습니다.</p>
-      <Button href="https://www.tlj.co.kr/store/search.asp">매장찾기</Button>
+      <Button href={`${import.meta.env.BASE_URL}store`}>매장찾기</Button>
     </div>
   </section>;
 }

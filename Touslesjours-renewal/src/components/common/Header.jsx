@@ -3,15 +3,14 @@ import './Header.css';
 
 const navigation = [
   { label: 'Menu', href: '/menu' },
-  { label: 'Store', href: '/#store' },
+  { label: 'Store', href: `${import.meta.env.BASE_URL}store` },
   { label: 'Search' },
   { label: 'Login', href: '/login' },
-  { label: 'Membership', href: '/#event' },
 ];
 
-export default function Header({ onSearch, isMenuPage, isLoginPage }) {
+export default function Header({ onSearch, isMenuPage, isLoginPage, isStorePage }) {
   return <header className="header" id="top"><div className="inner">
     <a className="header__logo" href="/" aria-label="뚜레쥬르 홈"><img src={assets.imgImage12} alt="TOUS les JOURS" width="305" height="87" /></a>
-    <nav className="header__nav" aria-label="주요 메뉴"><ul className="header__list">{navigation.map(({ label, href }) => <li key={label}>{href ? <a className="header__link" href={href} aria-current={(label === 'Menu' && isMenuPage) || (label === 'Login' && isLoginPage) ? 'page' : undefined}>{label}</a> : <button type="button" className="header__link" onClick={onSearch}>{label}</button>}</li>)}</ul></nav>
+    <nav className="header__nav" aria-label="주요 메뉴"><ul className="header__list">{navigation.map(({ label, href }) => <li key={label}>{href ? <a className="header__link" href={href} aria-current={(label === 'Menu' && isMenuPage) || (label === 'Login' && isLoginPage) || (label === 'Store' && isStorePage) ? 'page' : undefined}>{label}</a> : <button type="button" className="header__link" onClick={onSearch}>{label}</button>}</li>)}</ul></nav>
   </div></header>;
 }

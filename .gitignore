@@ -1,0 +1,24 @@
+# Dependency installations and generated caches
+**/node_modules/
+**/.vite/
+**/.npm-cache/
+
+# Local deployment metadata and browser verification profiles
+**/.vercel/
+**/.chrome-*/
+
+# Generated build and verification output
+# Keep docs/ tracked: it is the GitHub Pages deployment directory.
+**/dist/
+**/artifacts/
+
+# Package manager debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary catalog collection files (preserve existing project rules)
+**/scripts/*-source.html
+**/scripts/*-page-*.html
+**/scripts/*-detail-*.html
+**/scripts/*-downloads.txt

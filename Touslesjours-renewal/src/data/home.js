@@ -1,16 +1,6 @@
 export const assets = {
   "imgImage12": "/images/figma/image12.png",
-  "imgVisual2": "/images/figma/visual2.png",
-  "imgImage39": "/images/figma/image39.png",
-  "imgFrame78": "/images/figma/frame78.png",
-  "imgFrame79": "/images/figma/frame79.png",
-  "imgFrame80": "/images/figma/frame80.png",
-  "imgFrame81": "/images/figma/frame81.png",
   "imgObject": "/images/figma/object.png",
-  "imgFrame82": "/images/figma/frame82.png",
-  "imgFrame83": "/images/figma/frame83.png",
-  "imgFrame84": "/images/figma/frame84.png",
-  "imgFrame85": "/images/figma/frame85.png",
   "imgObject1": "/images/figma/object1.png",
   "imgObject2": "/images/figma/object2.png",
   "imgObject3": "/images/figma/object3.png",
@@ -18,17 +8,7 @@ export const assets = {
   "imgObject5": "/images/figma/object5.png",
   "imgObject6": "/images/figma/object6.png",
   "imgObject7": "/images/figma/object7.png",
-  "imgImage44": "/images/figma/image44.png",
-  "imgImage45": "/images/figma/image45.png",
-  "imgImage46": "/images/figma/image46.png",
-  "imgPick": "/images/figma/pick.png",
-  "imgFrame65": "/images/figma/frame65.png",
-  "imgFrame66": "/images/figma/frame66.png",
-  "imgFrame67": "/images/figma/frame67.png",
-  "imgFrame68": "/images/figma/frame68.png",
-  "imgFrame69": "/images/figma/frame69.png",
   "imgImage381": "/images/figma/image381.png",
-  "imgUnion": "/images/figma/union.png",
   "imgObject8": "/images/figma/object8.png",
   "imgObject9": "/images/figma/object9.png",
   "imgObject10": "/images/figma/object10.png",
@@ -41,11 +21,7 @@ export const assets = {
   "imgImage70": "/images/figma/image70.png",
   "imgRectangle1": "/images/figma/rectangle1.png",
   "imgImage30": "/images/figma/image30.png",
-  "imgObject15": "/images/figma/object15.png",
-  "imgIconsBiArrowRightCircle": "/images/figma/icons-bi-arrow-right-circle.svg",
-  "imgVector12": "/images/figma/vector12.svg",
-  "imgIconsBiArrowRightCircle1": "/images/figma/icons-bi-arrow-right-circle1.svg",
-  "imgUnion1": "/images/figma/union1.svg"
+  "imgObject15": "/images/figma/object15.png"
 };
 
 export const menuProducts = [

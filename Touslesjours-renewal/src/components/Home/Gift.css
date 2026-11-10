@@ -41,7 +41,6 @@
 
 .gift__card.gift-card {
   width: 100%;
-  overflow: hidden;
   border-radius: 28.765px;
 }
 
@@ -109,13 +108,18 @@
 }
 
 .gift__roll-art img,
-.gift__set-art img {
+.gift__set-art img,
+.gift__cake-art img {
   position: absolute;
+  max-width: none;
+}
+
+.gift__roll-art img,
+.gift__set-art img {
   top: -10%;
   left: 8%;
   width: 86.39%;
   height: 130.43%;
-  max-width: none;
 }
 
 .gift__cake-art {
@@ -135,12 +139,10 @@
 }
 
 .gift__cake-art img {
-  position: absolute;
   top: -0.15%;
   left: 12.87%;
   width: 73.47%;
   height: 110.93%;
-  max-width: none;
 }
 
 .gift__decoration {

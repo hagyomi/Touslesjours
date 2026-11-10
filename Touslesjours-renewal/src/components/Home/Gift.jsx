@@ -22,7 +22,6 @@ const gifts = [
             '소중한 사람들과 더 달콤한 순간을 만들어주는',
             '뚜레쥬르 케이크로 감사의 마음을 전해보세요.',
         ],
-        image: assets.imgImage44,
     },
     {
         title: 'Roll Cake',
@@ -31,13 +30,11 @@ const gifts = [
             '촉촉한 시트와 부드러운 크림이 어우러진',
             ' 뚜레쥬르 롤케이크로 마음을 전해보세요.',
         ],
-        image: assets.imgImage45,
     },
     {
         title: 'Gift Set',
         subtitle: ['감사의 마음을', '가득 담은 선물 세트'],
         description: ['정성스럽게 준비한 뚜레쥬르 선물 세트로', '더 따뜻한 추석을 선물해보세요.'],
-        image: assets.imgImage46,
     },
 ].map((gift, index) => ({ ...gift, designIndex: index }))
     .filter(gift => getGiftCollectionProducts(gift.title).length > 0);

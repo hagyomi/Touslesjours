@@ -9,13 +9,13 @@
     "preview": "vite preview",
     "verify:refresh": "node scripts/verify-refresh.mjs",
     "verify:css": "node scripts/verify-css-audit.mjs after",
-    "verify:structure": "node scripts/audit-structure.mjs"
+    "verify:structure": "node scripts/audit-structure.mjs",
+    "verify:layout": "node scripts/verify-layout.mjs"
   },
   "dependencies": {
     "gsap": "^3.15.0",
     "react": "^19.2.8",
-    "react-dom": "^19.2.8",
-    "swiper": "^14.3.0"
+    "react-dom": "^19.2.8"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^6.1.1",

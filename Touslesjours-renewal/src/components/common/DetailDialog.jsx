@@ -48,7 +48,6 @@ export default function DetailDialog({ selection, origin, expansion = 'fullscree
   const closeCallback = useRef(onClose);
   closeCallback.current = onClose;
   const closing = useRef(false);
-  const afterClose = useRef(null);
   const [query, setQuery] = useState('');
   const isSearch = selection.type === 'search';
   const isCollection = selection.type === 'collection';
@@ -66,8 +65,6 @@ export default function DetailDialog({ selection, origin, expansion = 'fullscree
   };
   const finishClose = () => {
     closeCallback.current();
-    afterClose.current?.();
-    afterClose.current = null;
   };
 
   useLayoutEffect(() => {
@@ -178,7 +175,7 @@ export default function DetailDialog({ selection, origin, expansion = 'fullscree
     <h2 id="detail-title">{title}</h2>
     {isSearch && <label className="detail-dialog__search">상품명<input autoFocus type="search" value={query} placeholder="케이크, 샌드위치 등을 검색하세요" onChange={event => setQuery(event.target.value)} /></label>}
     {isSearch || isCollection ? <><p aria-live="polite">{results.length}개의 상품</p>{isProductCollection ? <div className="detail-dialog__products">{results.map(item => <MenuCard key={item.id} image={item.image} imageAlt={item.name} title={item.name} description={item.description} onClick={() => onSelect(item)} />)}</div> : <div className="detail-dialog__results">{results.map(item => <button type="button" key={item.id} onClick={() => onSelect(item)}><img src={item.image} alt="" width="100" height="100" /><span>{item.name}</span></button>)}</div>}{!results.length && <p>검색 결과가 없습니다. 다른 상품명을 입력해 주세요.</p>}</>
-      : <>{selection.image && <img className="detail-dialog__image" src={selection.image} alt={selection.name} />}<p className="detail-dialog__description">{selection.description.map(line => <span key={line}>{line}</span>)}</p>{!selection.image && <p className="detail-dialog__note">Figma 시안의 이벤트 안내입니다. 실제 진행 여부와 자세한 조건은 공식 홈페이지에서 확인해 주세요.</p>}<a className="button" href={selection.image ? '/#store' : 'https://www.tlj.co.kr/'} onClick={selection.image ? event => { if (origin) { event.preventDefault(); afterClose.current = () => requestAnimationFrame(() => document.getElementById('store')?.scrollIntoView()); } requestClose(); } : undefined}>{selection.image ? '가까운 매장 찾기' : '공식 홈페이지'}</a></>}
+      : <>{selection.image && <img className="detail-dialog__image" src={selection.image} alt={selection.name} />}<p className="detail-dialog__description">{selection.description.map(line => <span key={line}>{line}</span>)}</p>{!selection.image && <p className="detail-dialog__note">Figma 시안의 이벤트 안내입니다. 실제 진행 여부와 자세한 조건은 공식 홈페이지에서 확인해 주세요.</p>}<a className="button" href={selection.image ? `${import.meta.env.BASE_URL}store` : 'https://www.tlj.co.kr/'} onClick={selection.image ? requestClose : undefined}>{selection.image ? '가까운 매장 찾기' : '공식 홈페이지'}</a></>}
     </>}
     </div>
   </dialog>;

@@ -45,13 +45,17 @@
   font-weight: 600;
 }
 
-.login-card__form input {
+.login-card__form input,
+.login-card__button {
   width: 100%;
   min-height: 50px;
   padding: 12px 16px;
-  border: 1px solid var(--color-menu-button-border);
   border-radius: 8px;
   background: var(--color-white);
+}
+
+.login-card__form input {
+  border: 1px solid var(--color-menu-button-border);
 }
 
 .login-card__form input + label {
@@ -62,12 +66,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  min-height: 50px;
-  padding: 12px 16px;
   border: 1px solid var(--color-brand-green);
-  border-radius: 8px;
-  background: var(--color-white);
   color: var(--color-brand-green);
   text-align: center;
   text-decoration: none;
